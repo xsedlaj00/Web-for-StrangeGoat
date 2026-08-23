@@ -1,0 +1,25 @@
+[
+    {
+        "id": "melodka",
+        "datum": "24. srpna 2026",
+        "nazev": "Melodka Brno",
+        "uvodni_fotka": "kapela.jpg",
+        "vsechny_fotky": 
+        [
+            "kapela.jpg",
+            "kapela.jpg",
+            "kapela.jpg"
+        ]
+    },
+    {
+        "id": "zkusebna",
+        "nazev": "Dřina ve zkušebně",
+        "datum": "15. září 2026",
+        "uvodni_fotka": "kapela.jpg",
+        "vsechny_fotky": 
+        [
+            "kapela.jpg",
+            "kapela.jpg"
+        ]
+    }
+]

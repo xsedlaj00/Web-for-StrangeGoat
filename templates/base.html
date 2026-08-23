@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strange Goat</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <button id="menu-tlacitko" onclick="prepniMenu()">☰ MENU</button>
+    <nav id="bocni-menu">
+        <img src="/static/goat.png" alt="koza">
+        <ul>
+            <!-- Všimni si, kam odkazy směřují (href). To jsou naše budoucí URL adresy. -->
+            <li><a href="/">Úvod</a></li>
+            <li><a href="/koncerty">Koncerty</a></li>
+            <li><a href="/hudba">Hudba</a></li>
+            <li><a href="/galerie">Galerie</a></li>
+        </ul>
+    </nav>
+
+    <main id="hlavni-obsah">
+        <!-- Sem se bude automaticky vkládat obsah konkrétních stránek -->
+        {% block obsah %}{% endblock %}
+    </main>
+    <script>
+    function prepniMenu() {
+        // Najdeme prvek menu podle jeho ID
+        var menu = document.getElementById("bocni-menu");
+        
+        // Funkce toggle() buď přidá, nebo odebere třídu "otevreno".
+        // Tím se aplikuje to pravidlo left: 0; z CSS.
+        menu.classList.toggle("otevreno");
+        
+        // 2. Najdeme hlavní obsah a posuneme/vrátíme ho (nová část)
+        var obsah = document.getElementById("hlavni-obsah");
+        obsah.classList.toggle("posunuto");
+
+        var background = document.getElementById("menu-tlacitko");
+        background.classList.toggle("zmiz");
+    }
+</script>
+</body>
+</html>

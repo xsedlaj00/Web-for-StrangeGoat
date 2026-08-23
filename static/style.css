@@ -1,0 +1,175 @@
+body {
+    background-color: #0e8b00df; /* Temně šedá, téměř černá */
+    color: #e0e0e0; /* Světle šedý text pro dobré čtení */
+    font-family: Arial, sans-serif;
+    margin: 0; /* Vymaže výchozí bílé okraje prohlížeče */
+    
+}
+
+#hlavni-obsah {
+    padding: 40px; /* Aby text nebyl nalepený úplně na hrany obrazovky */
+    transition: margin-left 0.3s ease; /* Zase chceme, aby ten pohyb byl plynulý, jako u menu */
+    margin-left: 250px;
+}
+
+/* Tohle pravidlo posune hlavní obsah, když je menu otevřené */
+#hlavni-obsah.posunuto {
+    margin-left: 0px; /* Těchto 250px odpovídá přesně šířce menu, které jsme nastavili dřív */
+}
+
+#bocni-menu {
+    height: 100vh; /* Roztáhne menu na celou výšku okna (100% viewport height) */
+    width: 250px; /* Šířka menu */
+    position: fixed; /* Zafixuje menu na místě i při scrollování stránky dolů */
+    top: 0;
+    left: 0px; /* Zásadní trik: posuneme menu o 250px doleva, takže zmizí za okrajem monitoru */
+    background-color: #066599c0; /* O něco světlejší černá než zbytek webu, aby se to oddělilo */
+    transition: left 0.3s ease; /* Když se změní vlastnost left, ať se to stane plynule za 0.3 vteřiny */
+    padding-top: 60px; /* Odsazení odshora, aby odkazy nebyly nalepené na horní hranu */
+
+}
+
+#bocni-menu a {
+    color:rgba(220, 4, 213, 0.762);
+    text-decoration:wavy /* Tato vlastnost řídí podtržení. Když sem zadáš slovo 'none', podtržení zmizí. */ ;
+    font-size:20px       /* Tímto zvětšíš písmo. Zadávej číslo v pixelech, třeba '22px'. */ ;
+    display: block        /* Abys mohl později odkazům nastavit lepší mezery mezi sebou, zadej sem slovo 'block'. Tím se každý odkaz roztáhne na celý svůj řádek v menu. */ ;
+    padding: 20px;
+}
+
+#bocni-menu a:hover {
+    background-color: #3d3846;
+}
+
+#bocni-menu ul {
+    list-style: none;
+    padding: 0;
+}
+/* Tuhle třídu přidáme později pomocí JavaScriptu, aby menu vyjelo */
+#bocni-menu.otevreno {
+    left: -250px; /* Posune menu zpět na nulovou souřadnici (bude vidět) */
+}
+#bocni-menu img {
+    width: 80px; /* Definuje fixní šířku, můžeš si číslo libovolně upravit */
+    display: block; /* Umožní nám s obrázkem lépe manipulovat */
+    margin: 0 auto 30px auto; /* Tento trik s 'auto' vycentruje kozu doprostřed menu a přidá pod ní 30px mezeru */
+}
+/* Vzhled tlačitka */
+#menu-tlacitko {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: transparent;
+    color: white;
+    border: none;
+    padding: 15px;
+    position: fixed;
+    z-index: 10; /* Zajistí, že tlačítko bude vždy úplně nahoře nad vším ostatním */
+}
+#menu-tlacitko::before {
+    
+   
+    /* 1. Aby vrstva vůbec vznikla, CSS vyžaduje vlastnost content, i když je prázdná */
+    content: ""; 
+    /* 2. Roztáhneme vrstvu přesně přes celé menu od kraje ke kraji */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* 3. Tady pošleme vrstvu do pozadí (za text, ale nad tvoji modrou barvu) */
+    z-index: -1; 
+    
+    /* 4. Tady nastavíme onu kýženou průhlednost (0.2 znamená 20 % viditelnosti) */
+    opacity: 0.0; 
+    transition: 0.3s ease; /* Když se změní vlastnost left, ať se to stane plynule za 0.3 vteřiny */
+
+    
+    /* 5. A sem vlož ty tři původní řádky s kozou z předchozího pokusu */
+    background-image: url('/static/goat.png'); 
+    background-size: 60px 40px;
+    background-repeat: no-repeat; 
+    background-position: 0;
+}
+#menu-tlacitko.zmiz::before {
+    
+   
+    /* 1. Aby vrstva vůbec vznikla, CSS vyžaduje vlastnost content, i když je prázdná */
+    content: ""; 
+    /* 2. Roztáhneme vrstvu přesně přes celé menu od kraje ke kraji */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* 3. Tady pošleme vrstvu do pozadí (za text, ale nad tvoji modrou barvu) */
+    z-index: -1; 
+    
+    /* 4. Tady nastavíme onu kýženou průhlednost (0.2 znamená 20 % viditelnosti) */
+    opacity: 0.6; 
+    transition: 0.3s ease; /* Když se změní vlastnost left, ať se to stane plynule za 0.3 vteřiny */
+
+    
+    /* 5. A sem vlož ty tři původní řádky s kozou z předchozího pokusu */
+    background-image: url('/static/goat.png'); 
+    background-size: 60px 40px;
+    background-repeat: no-repeat; 
+    background-position: +30px;
+}
+
+/* Definice mřížky */
+.galerie-mrizka {
+    display: grid;
+    /* Tohle magické pravidlo říká: "Vytvoř sloupce, které mají minimálně 250px.
+       Pokud je obrazovka širší, poskládej jich vedle sebe co nejvíc." */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px; /* Mezera mezi čtverci */
+    padding-top: 30px;
+}
+
+/* Vzhled jedné dlaždice */
+.album-dlazdice {
+    background-color: #1a1a1a;
+    text-decoration: none; /* Zbavíme se podtržení odkazu */
+    color: #e0e0e0;
+    border-radius: 8px; /* Jemně zaoblené rohy */
+    overflow: hidden; /* Aby obrázek nepřetekl ze zaoblených rohů */
+    transition: transform 0.2s ease; /* Příprava na animaci po najetí myší */
+}
+
+/* Efekt při najetí myší - čtverec lehce povyskočí */
+.album-dlazdice:hover {
+    transform: translateY(-5px);
+}
+
+/* Kontejner pro obrázek, abychom zaručili jeho čtvercový tvar */
+.obrazek-kontejner {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Tohle vynutí přesný čtverec bez ohledu na šířku */
+    overflow: hidden;
+}
+
+/* Samotný obrázek uvnitř čtverce */
+.obrazek-kontejner img {
+    width: 100%;
+    height: 100%;
+    /* object-fit: cover je zásadní - ořízne obrázek, aby se vešel do čtverce bez deformace! */
+    object-fit: cover; 
+}
+
+/* Texty dole v dlaždici */
+.album-info {
+    padding: 15px;
+}
+
+.album-info h3 {
+    margin: 0 0 5px 0;
+    color: rgba(220, 4, 213, 0.762); /* Tvoje rocková fialová! */
+}
+
+.album-info p {
+    margin: 0;
+    font-size: 14px;
+    color: #888;
+}

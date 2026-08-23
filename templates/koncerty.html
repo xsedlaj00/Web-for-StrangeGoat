@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block obsah %}
+    <h2>Nadcházející koncerty</h2>
+    <ul>
+        {% for koncert in koncerty_do_html %}
+            <li>{{ koncert.datum }} - {{ koncert.misto }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

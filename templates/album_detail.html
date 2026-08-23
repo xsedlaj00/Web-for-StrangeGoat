@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block obsah %}
+
+    <h1> {{album.nazev}}</h1>    
+
+    {% for fotka in album.vsechny_fotky %}
+        <img src = "/static/{{fotka}}"> 
+    {% endfor %}
+
+
+
+
+{% endblock %}
