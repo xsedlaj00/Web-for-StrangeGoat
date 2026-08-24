@@ -1,5 +1,13 @@
 from flask import Flask, render_template
 import json
+import os
+from dotenv import load_dotenv
+
+# Tohle řekne Pythonu: "Najdi soubor .env a načti z něj všechna tajná data"
+load_dotenv() 
+
+# Takhle si pak heslo vytáhneš, když ho budeš potřebovat porovnat
+skutecne_heslo = os.getenv("ADMIN_HESLO")
 
 app = Flask(__name__)
 
@@ -52,6 +60,10 @@ def detail_alba(id_alba):
         
     # 4. Pokud jsme ho našli, pošleme jen to JEDNO album do nové šablony
     return render_template('album_detail.html', album=hledane_album)
+
+@app.route('/spravce')
+def spravce():
+    return render_template('spravce.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -194,3 +194,12 @@ body {
     width: 400px;
     padding-left: 6px;
 }
+
+#login {
+    opacity: 0;
+    width: 20px;
+    height: 10px;
+    position: fixed;
+    bottom: 0;
+    left:0;
+}

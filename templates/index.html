@@ -9,12 +9,14 @@
         <div class="mini-koncerty">
         <h2>Nejblizsi koncerty</h2>
         <ul>
-        {% for koncert in koncerty_do_html[0:3]%}
-            <li>{{ koncert.datum }} - {{ koncert.misto }}</li>
+        {% for koncert in koncerty_do_html[0:3] %}
+            {% if koncert is not none %}
+                <li>{{ koncert.datum }} - {{ koncert.misto }}</li>
+            {% endif %}
         {% endfor %}
         </ul>
         </div>
-         
+
         <h2>Bio</h2>
         <p>Tady bude text o tom, jak kapela vznikla...</p>
         </nav>
