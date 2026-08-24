@@ -71,9 +71,11 @@ def spravce():
             session['prihlasen'] = True
     if session.get('prihlasen') == True:
         # TADY BUDE ADMINISTRACE - uživatel má vstupenku
-        return "VÍTEJ V ZÁKULISÍ! TADY SE BUDOU UPRAVOVAT KONCERTY." 
+        return render_template('admin_dashboard.html') 
     else:
         # Zobrazení přihlašovacího formuláře (stránka, kterou už máš hotovou)
         return render_template('spravce.html')
+
+    
 if __name__ == '__main__':
     app.run(debug=True)
