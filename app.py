@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, session
 import json
 import os
 from dotenv import load_dotenv
@@ -10,6 +10,7 @@ load_dotenv()
 skutecne_heslo = os.getenv("ADMIN_HESLO")
 
 app = Flask(__name__)
+app.secret_key = os.getenv("SECRET_KEY")# (nebo si to časem dej taky do .env)
 
 # Cesta 1: Úvodní stránka (index.html)
 @app.route('/')
@@ -61,9 +62,18 @@ def detail_alba(id_alba):
     # 4. Pokud jsme ho našli, pošleme jen to JEDNO album do nové šablony
     return render_template('album_detail.html', album=hledane_album)
 
-@app.route('/spravce')
+@app.route('/spravce',methods=['GET','POST'])
 def spravce():
-    return render_template('spravce.html')
 
+    if request.method == 'POST':
+        zadane_heslo = request.form.get('heslo')
+        if zadane_heslo == skutecne_heslo :
+            session['prihlasen'] = True
+    if session.get('prihlasen') == True:
+        # TADY BUDE ADMINISTRACE - uživatel má vstupenku
+        return "VÍTEJ V ZÁKULISÍ! TADY SE BUDOU UPRAVOVAT KONCERTY." 
+    else:
+        # Zobrazení přihlašovacího formuláře (stránka, kterou už máš hotovou)
+        return render_template('spravce.html')
 if __name__ == '__main__':
     app.run(debug=True)
