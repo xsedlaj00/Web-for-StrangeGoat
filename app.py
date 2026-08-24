@@ -6,7 +6,9 @@ app = Flask(__name__)
 # Cesta 1: Úvodní stránka (index.html)
 @app.route('/')
 def home():
-    return render_template('index.html')
+    with open('koncerty.json', 'r', encoding='utf-8') as f:
+        seznamkoncertu = json.load(f)
+    return render_template('index.html',koncerty_do_html=seznamkoncertu)
 
 # Cesta 2: Koncerty (koncerty.html)
 @app.route('/koncerty')

@@ -1,10 +1,22 @@
 {% extends "base.html" %}
     {% block obsah %}
+        <nav id="uvodni-stranka">
+
         <h1>Vítejte v našem digitálním doupěti</h1>
         <p>Jsme rocková kapela a tohle je náš nový web.</p>
         <img src="/static/kapela.jpg" alt="Naše rocková kapela na pódiu">
-        
+
+        <div class="mini-koncerty">
+        <h2>Nejblizsi koncerty</h2>
+        <ul>
+        {% for koncert in koncerty_do_html[0:3]%}
+            <li>{{ koncert.datum }} - {{ koncert.misto }}</li>
+        {% endfor %}
+        </ul>
+        </div>
+         
         <h2>Bio</h2>
         <p>Tady bude text o tom, jak kapela vznikla...</p>
+        </nav>
     {% endblock %}
    

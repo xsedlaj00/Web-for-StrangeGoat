@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 body {
-    background-color: #0e8b00df; /* Temně šedá, téměř černá */
+    background-color: #1e1432ea; /* Temně šedá, téměř černá */
     color: #e0e0e0; /* Světle šedý text pro dobré čtení */
     font-family: 'Playfair Display', serif;    
     font-size: larger;
@@ -179,4 +179,18 @@ body {
     margin: 0;
     font-size: 14px;
     color: #888;
+}
+
+#uvodni-stranka ul{
+    list-style: none;
+    padding: 5px;
+}
+
+.mini-koncerty {
+    background-color: #65022c;
+    text-decoration: none; /* Zbavíme se podtržení odkazu */
+    color: #e0e0e0;
+    border-radius: 4px; /* Jemně zaoblené rohy */
+    width: 400px;
+    padding-left: 6px;
 }
