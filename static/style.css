@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 body {
-    background-color: #1e1432ea; /* Temně šedá, téměř černá */
+    background-color: #052658ea; /* Temně šedá, téměř černá */
     color: #e0e0e0; /* Světle šedý text pro dobré čtení */
     font-family: 'Playfair Display', serif;    
     font-size: larger;
@@ -29,14 +29,14 @@ body {
     position: fixed; /* Zafixuje menu na místě i při scrollování stránky dolů */
     top: 0;
     left: 0px; /* Zásadní trik: posuneme menu o 250px doleva, takže zmizí za okrajem monitoru */
-    background-color: #066599c0; /* O něco světlejší černá než zbytek webu, aby se to oddělilo */
+    background-color: #0b5075c0; /* O něco světlejší černá než zbytek webu, aby se to oddělilo */
     transition: left 0.3s ease; /* Když se změní vlastnost left, ať se to stane plynule za 0.3 vteřiny */
     padding-top: 60px; /* Odsazení odshora, aby odkazy nebyly nalepené na horní hranu */
 
 }
 
 #bocni-menu a {
-    color:rgb(204, 102, 24);
+    color:rgba(251, 251, 249, 0.939);
     text-decoration:wavy /* Tato vlastnost řídí podtržení. Když sem zadáš slovo 'none', podtržení zmizí. */ ;
     font-size:30px       /* Tímto zvětšíš písmo. Zadávej číslo v pixelech, třeba '22px'. */ ;
     display: block        /* Abys mohl později odkazům nastavit lepší mezery mezi sebou, zadej sem slovo 'block'. Tím se každý odkaz roztáhne na celý svůj řádek v menu. */ ;

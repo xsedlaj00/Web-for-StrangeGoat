@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
+
     <button id="menu-tlacitko" onclick="prepniMenu()">☰ MENU</button>
     <nav id="bocni-menu">
         <img src="/static/goat.png" alt="koza">
@@ -20,9 +21,19 @@
     </nav>
     <button id="login" onclick="Prihlas()"></button>
     <main id="hlavni-obsah">
+
+        {% if request.path != '/' %}
+            <nav id="back-kontejner">
+                <button id="back-tlacitko" onclick="getBack()">
+                    <!--pridat obrazek-->
+                    <img src="/static/sipka.png" alt="Zpět">
+                </button>
+            </nav>
+        {% endif %}
+
         <!-- Sem se bude automaticky vkládat obsah konkrétních stránek -->
         {% block obsah %}{% endblock %}
-    </main>
+        </main>
     <script>
         function prepniMenu() {
             // Najdeme prvek menu podle jeho ID
@@ -39,7 +50,11 @@
             var background = document.getElementById("menu-tlacitko");
             background.classList.toggle("zmiz");
         }
+        /* get back fce*/
+        function getBack() {
+            window.location.href = "/";
 
+        }
         /*function zavriMenu()
         {
             // Najdeme prvek menu podle jeho ID
