@@ -32,7 +32,7 @@ body {
     background-color: #0b5075c0; /* O něco světlejší černá než zbytek webu, aby se to oddělilo */
     transition: left 0.3s ease; /* Když se změní vlastnost left, ať se to stane plynule za 0.3 vteřiny */
     padding-top: 60px; /* Odsazení odshora, aby odkazy nebyly nalepené na horní hranu */
-
+    z-index: 90;
 }
 
 #bocni-menu a {
@@ -42,6 +42,7 @@ body {
     display: block        /* Abys mohl později odkazům nastavit lepší mezery mezi sebou, zadej sem slovo 'block'. Tím se každý odkaz roztáhne na celý svůj řádek v menu. */ ;
     padding: 20px;
     font-family: 'Courier Prime', monospace;
+
 }
 
 #bocni-menu a:hover {
@@ -70,7 +71,7 @@ body {
     border: none;
     padding: 15px;
     position: fixed;
-    z-index: 10; /* Zajistí, že tlačítko bude vždy úplně nahoře nad vším ostatním */
+    z-index: 1001; /* Zajistí, že tlačítko bude vždy úplně nahoře nad vším ostatním */
 }
 #menu-tlacitko::before {
     
@@ -206,4 +207,49 @@ body {
 #back-kontejner 
 {
     padding-top: 10px;
+}
+#back-tlacitko {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+}
+
+#back-tlacitko img{
+    width: 40px;
+}
+
+#hero-sekce {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* 100 % výšky obrazovky */
+    background-image: url('/static/kapela.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: 2; /* Aby byla fotka pod hlavním menu */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Třída pro zmenšenou fotku */
+#hero-sekce.smrsteno {
+    height: 120px; /* Zmenší se na malý pruh */
+}
+
+.hero-nadpis {
+    color: white;
+    font-size: 3rem;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+/* Spodní obsah */
+#spodni-obsah {
+    margin-top: 100vh; /* Začíná až pod první obrazovkou */
+    position: relative;
+    z-index: 1; /* Vyjede NAD fotku */
+    background-color: #052658ea; /* Tvoje modré pozadí */
+    padding: 40px;
+    min-height: 100vh;
 }

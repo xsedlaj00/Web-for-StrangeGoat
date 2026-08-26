@@ -55,6 +55,7 @@
             window.location.href = "/";
 
         }
+        
         /*function zavriMenu()
         {
             // Najdeme prvek menu podle jeho ID
@@ -78,6 +79,27 @@
             prepniMenu();
 
         }
+
+        window.addEventListener("scroll", function() {
+            var hero = document.getElementById("hero-sekce");
+            
+            if (hero) {
+                // 1. Zjistíme, jak moc jsme odskrolovali
+                var odskrolovano = window.scrollY;
+                
+                // 2. Zjistíme celkovou výšku aktuálního okna prohlížeče
+                var vyskaOkna = window.innerHeight;
+                
+                // 3. Vypočítej novou výšku: (výška okna MÍNUS to, co jsme odskrolovali)
+                var vypocitanaVyska = vyskaOkna - odskrolovano;
+                
+                // 4. Zastavíme zmenšování na 120 pixelech
+                var konecnaVyska = Math.max(120, vypocitanaVyska);
+                
+                // 5. Nastavíme tu výšku natvrdo prvku
+                hero.style.height = konecnaVyska + "px";
+            }
+        });
     </script>
 </body>
 </html>
