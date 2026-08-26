@@ -76,8 +76,6 @@
         function Prihlas() {
 
             window.location.href = "/spravce"; // Tohle se stane až za chvíli
-            prepniMenu();
-
         }
 
         window.addEventListener("scroll", function() {
@@ -100,6 +98,44 @@
                 hero.style.height = konecnaVyska + "px";
             }
         });
+
+        window.addEventListener("scroll", function() {
+            var nano = document.querySelector(".nano-koncerty");
+            
+            if (nano) {
+                // 1. Zjistíme, jak moc jsme odskrolovali
+                var odskrolovano = window.scrollY;
+                
+                // 2. Zjistíme celkovou výšku aktuálního okna prohlížeče
+                var vyskaOkna = window.innerHeight;
+                
+                // 3. Vypočítej novou výšku: (výška okna MÍNUS to, co jsme odskrolovali)
+                var vypocitanaVyska = vyskaOkna - odskrolovano;
+                
+                if (odskrolovano>500){
+                    nano.classList.add("schovano");
+                    
+                }
+                else 
+                    nano.classList.remove("schovano");
+                if (odskrolovano>600 && window.innerWidth>768){
+                                                    // Najdeme prvek menu podle jeho ID
+                    var menu = document.getElementById("bocni-menu");
+                    
+                    // Funkce toggle() buď přidá, nebo odebere třídu "otevreno".
+                    // Tím se aplikuje to pravidlo left: 0; z CSS.
+                    menu.classList.add("otevreno");
+                    
+                    // 2. Najdeme hlavní obsah a posuneme/vrátíme ho (nová část)
+                    var obsah = document.getElementById("hlavni-obsah");
+                    obsah.classList.add("posunuto");
+
+                    var background = document.getElementById("menu-tlacitko");
+                    background.classList.add("zmiz");
+                }
+            }
+        });
+
     </script>
 </body>
 </html>

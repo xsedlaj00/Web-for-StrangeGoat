@@ -6,7 +6,7 @@ body {
     font-family: 'Playfair Display', serif;    
     font-size: larger;
     margin: 0; /* Vymaže výchozí bílé okraje prohlížeče */
-    
+    overflow-x: hidden;    
 }
 #koncerty ul{
     list-style: none;
@@ -101,28 +101,9 @@ body {
 }
 #menu-tlacitko.zmiz::before {
     
-   
-    /* 1. Aby vrstva vůbec vznikla, CSS vyžaduje vlastnost content, i když je prázdná */
-    content: ""; 
-    /* 2. Roztáhneme vrstvu přesně přes celé menu od kraje ke kraji */
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    
-    /* 3. Tady pošleme vrstvu do pozadí (za text, ale nad tvoji modrou barvu) */
-    z-index: -1; 
-    
     /* 4. Tady nastavíme onu kýženou průhlednost (0.2 znamená 20 % viditelnosti) */
     opacity: 0.6; 
-    transition: 0.3s ease; /* Když se změní vlastnost left, ať se to stane plynule za 0.3 vteřiny */
 
-    
-    /* 5. A sem vlož ty tři původní řádky s kozou z předchozího pokusu */
-    background-image: url('/static/goat.png'); 
-    background-size: 60px 40px;
-    background-repeat: no-repeat; 
     background-position: +30px;
 }
 
@@ -182,18 +163,27 @@ body {
     color: #888;
 }
 
+#uvodni-stranka
+{   
+    padding-top:0;
+    padding-bottom: 20px;
+    min-height: 1400px;
+    background-repeat: no-repeat;
+    background-position: center -120px;
+}
+#spodni-obsah img
+{
+    position: absolute;
+    top: -100px;
+    z-index: -1;
+    left: 60%; /* Odsune levý okraj obrázku přesně do poloviny obrazovky */
+    transform: translateX(-50%); 
+    opacity: 0.8;
+    /* Cukne s celým obrázkem o polovinu jeho vlastní šířky zpátky doleva, čímž najde dokonalý střed */
+}
 #uvodni-stranka ul{
     list-style: none;
     padding: 5px;
-}
-
-.mini-koncerty {
-    background-color: #65022c;
-    text-decoration: none; /* Zbavíme se podtržení odkazu */
-    color: #e0e0e0;
-    border-radius: 4px; /* Jemně zaoblené rohy */
-    width: 400px;
-    padding-left: 6px;
 }
 
 #login {
@@ -203,16 +193,16 @@ body {
     position: fixed;
     bottom: 0;
     left:0;
+    z-index: 103;
 }
 #back-kontejner 
 {
-    padding-top: 10px;
+    padding-top: 40px;
 }
 #back-tlacitko {
     background-color: transparent;
     border: none;
     cursor: pointer;
-
 }
 
 #back-tlacitko img{
@@ -227,7 +217,7 @@ body {
     height: 100vh; /* 100 % výšky obrazovky */
     background-image: url('/static/kapela.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: center 25%;
     z-index: 2; /* Aby byla fotka pod hlavním menu */
     display: flex;
     justify-content: center;
@@ -243,13 +233,103 @@ body {
     font-size: 3rem;
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
 }
+/* nejblizsi koncerty*/
+.nano-koncerty
+{
+    position: absolute;
+    right: 40px;
+    bottom: 5px;
+    background-color: #65022c;
+    text-decoration: none; /* Zbavíme se podtržení odkazu */
+    color: #e0e0e0;
+    border-radius: 4px; /* Jemně zaoblené rohy */
+    width: 90%; 
+    max-width: 400px;
+    height: min-content;
+    padding-left: 6px;
+    z-index: 1;
+    transition: opacity 0.3s ease;
+}
+
+.nano-koncerty.schovano
+{
+    pointer-events: none;
+    opacity: 0;
+}
 
 /* Spodní obsah */
 #spodni-obsah {
     margin-top: 100vh; /* Začíná až pod první obrazovkou */
     position: relative;
     z-index: 1; /* Vyjede NAD fotku */
-    background-color: #052658ea; /* Tvoje modré pozadí */
-    padding: 40px;
+    background-color: transparent; /* Temně šedá, téměř černá */
     min-height: 100vh;
+}
+
+
+@media screen and (max-width: 768px) {
+    
+    #hlavni-obsah {
+        /* Tady zrušíme tu obří mezeru zleva */
+        margin-left: 0; 
+        padding: 20px; /* Trochu zmenšíme vnitřní okraje, na mobilu je 40px moc */
+    }
+
+    #hlavni-obsah.posunuto {
+        /* I když se menu otevře, obsah už na mobilu nebudeme posouvat, 
+           menu ho prostě překryje */
+        margin-left: 0;
+    }
+
+    .hero-nadpis {
+        /* Obří nadpis by se na mobil nemusel vejít na řádek, trochu ho zmenšíme */
+        font-size: 2rem; 
+    }
+    
+    #hero-sekce {
+        /* Upravíme pozici fotky, aby na malém displeji na výšku kapela nevypadla ze záběru */
+        background-position: center top; 
+    }
+
+    #bocni-menu {
+        left: -250px;
+    }
+
+    #bocni-menu.otevreno {
+        left: 0;
+    }
+    #menu-tlacitko::before {
+        /* 1. Základní stavební kameny (ty se nikdy nemění) */
+        content: ""; 
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1; 
+        transition: 0.3s ease; 
+        background-image: url('/static/goat.png'); 
+        background-size: 60px 40px;
+        background-repeat: no-repeat; 
+        
+        /* 2. PROHOZENÝ VÝCHOZÍ STAV (Koza je rovnou vidět) */
+        opacity: 0.6; 
+        background-position: 30px;
+    }
+
+    #menu-tlacitko.zmiz::before {
+        /* 3. ZMĚNA PO KLIKNUTÍ (Napíšeme SEM JEN TO, co se má změnit) */
+        opacity: 0.0; 
+        background-position: 0;
+    }
+    #spodni-obsah img
+    {
+        position: absolute;
+        top: -100px;
+        z-index: -1;
+        left: 60%; /* Odsune levý okraj obrázku přesně do poloviny obrazovky */
+        transform: translateX(-50%); 
+        opacity: 0.25;
+        /* Cukne s celým obrázkem o polovinu jeho vlastní šířky zpátky doleva, čímž najde dokonalý střed */
+    }
 }

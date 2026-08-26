@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, session
 import json
 import os
+import datetime
 from dotenv import load_dotenv
 
 # Tohle řekne Pythonu: "Najdi soubor .env a načti z něj všechna tajná data"
@@ -11,6 +12,7 @@ skutecne_heslo = os.getenv("ADMIN_HESLO")
 
 app = Flask(__name__)
 app.secret_key = os.getenv("SECRET_KEY")# (nebo si to časem dej taky do .env)
+app.config['PERMANENT_SESSION_LIFETIME'] =datetime.timedelta(minutes=30)
 
 # Cesta 1: Úvodní stránka (index.html)
 @app.route('/')
@@ -68,6 +70,7 @@ def spravce():
     if request.method == 'POST':
         zadane_heslo = request.form.get('heslo')
         if zadane_heslo == skutecne_heslo :
+            session.permanent = True  # Tímto zapneš ten 30minutový odpočet!
             session['prihlasen'] = True
     if session.get('prihlasen') == True:
         # TADY BUDE ADMINISTRACE - uživatel má vstupenku
@@ -75,7 +78,6 @@ def spravce():
     else:
         # Zobrazení přihlašovacího formuláře (stránka, kterou už máš hotovou)
         return render_template('spravce.html')
-
     
 if __name__ == '__main__':
     app.run(debug=True)

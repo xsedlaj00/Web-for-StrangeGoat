@@ -2,31 +2,39 @@
     {% block obsah %}
         <div id="hero-sekce">
         <h1 class="hero-nadpis">STRANGE GOAT</h1>
-    </div>
+            <a href="/koncerty">
+            <div class="nano-koncerty">
+            <h2>Přijďte na nás!</h2>
+            <ul>
+            {% for koncert in koncerty_do_html[0:2] %}
+                {% if koncert is not none %}
+                    <li>{{ koncert.datum }} - {{ koncert.misto }}</li>
+                {%endif%}
+            {%else%}
+                <li>Zrovna není naplánovaný žádný koncert
+                    Vymyslíš něco?
+                </li>
+
+            {% endfor %}
+            </ul>
+            </div>
+            </a>
+        </div>
+
+
 
     <div id="spodni-obsah">
         <h2>Vítejte na oficiálním webu!</h2>
         <p>Tady budou videa z YouTube, odkaz na Instagram, koncerty a další věci...</p>
-        
+        <img src="/static/adu.png">
         <div style="height: 1000px;">
 
         <nav id="uvodni-stranka">
 
         <h1>Vítejte v našem digitálním doupěti</h1>
         <p>Jsme rocková kapela a tohle je náš nový web.</p>
-        <img src="/static/kapela.jpg" alt="Naše rocková kapela na pódiu">
-
-        <div class="mini-koncerty">
-        <h2>Nejblizsi koncerty</h2>
-        <ul>
-        {% for koncert in koncerty_do_html[0:3] %}
-            {% if koncert is not none %}
-                <li>{{ koncert.datum }} - {{ koncert.misto }}</li>
-            {% endif %}
-        {% endfor %}
-        </ul>
-        </div>
-
+        <!--<img src="/static/kapela.jpg" alt="Naše rocková kapela na pódiu">
+        -->
         <h2>Bio</h2>
         <p>Tady bude text o tom, jak kapela vznikla...</p>
         </nav>
