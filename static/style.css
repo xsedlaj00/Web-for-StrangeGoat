@@ -279,7 +279,9 @@ body {
     top:130px;
 }
 #hlavni-zapati{
-    position: inherit;
+    position: absolute;
+    display: flex;
+    
 }
 
 #hero-nadpis img {
