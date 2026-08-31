@@ -262,7 +262,6 @@ body {
 #spodni-obsah {
     margin-top: 100vh; /* Začíná až pod první obrazovkou */
     position: relative;
-    outline: 2px solid red;
     z-index: 1; /* Vyjede NAD fotku */
     background-color: transparent; /* Temně šedá, téměř černá */
     min-height: 100vh;
@@ -342,6 +341,5 @@ body {
     }
     #ig-okno{
         position: relative;
-        filter: invert(1) hue-rotate(180deg);
     }
 }
