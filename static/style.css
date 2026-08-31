@@ -229,10 +229,8 @@ body {
     height: 120px; /* Zmenší se na malý pruh */
 }
 
-.hero-nadpis {
-    color: white;
-    font-size: 3rem;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+#hero-nadpis img {
+    position: relative;
 }
 /* nejblizsi koncerty*/
 .nano-koncerty
@@ -273,6 +271,15 @@ body {
     right: 0;
     top:130px;
 }
+#hlavni-zapati{
+    position: inherit;
+}
+
+#hero-nadpis img {
+    padding-left: 90px;
+    transition: transform 0.1s ease-out;
+}
+
 
 @media screen and (max-width: 768px) {
     
@@ -341,5 +348,8 @@ body {
     }
     #ig-okno{
         position: relative;
+    }
+    #hero-nadpis img {
+    scale: 0.4;
     }
 }

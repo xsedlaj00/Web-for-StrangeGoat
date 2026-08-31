@@ -1,7 +1,9 @@
 {% extends "base.html" %}
     {% block obsah %}
         <div id="hero-sekce">
-        <h1 class="hero-nadpis">STRANGE GOAT</h1>
+            <div id="hero-nadpis">
+                <img src="/static/font.png" alt="nadpis" >            
+            </div>
             <a href="/koncerty">
             <div class="nano-koncerty">
             <h2>Přijďte na nás!</h2>
@@ -49,5 +51,22 @@
         </div>
         
     </div>
+    <script>
+        window.addEventListener("scroll", function() {
+            var logo= document.querySelector("#hero-nadpis img");
+            if(logo)
+            {
+                var odskrolovano =window.scrollY;
+                var skale=1- odskrolovano/1200;
+                if (window.innerWidth>768)
+                    var konecnaSkale = Math.max(0.2, skale);
+                else
+                    var konecnaSkale = Math.max(0.5,skale);
+
+                logo.style.transform = "scale(" + konecnaSkale + ")";
+
+            }
+        });
+    </script>
     {% endblock %}
    
