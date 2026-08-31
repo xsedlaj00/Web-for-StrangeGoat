@@ -213,12 +213,17 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    /* ignore clics */
+    pointer-events: none;
 }
 /* Třída pro zmenšenou fotku */
 #hero-sekce.smrsteno {
     height: 120px; /* Zmenší se na malý pruh */
 }
-
+#hero-nadpis
+{
+    pointer-events: none;
+}
 #hero-nadpis img {
     position: relative;
 }
@@ -239,7 +244,7 @@ body {
     z-index: 1;
     transition: opacity 0.3s ease;
     transition: transform 0.2s ease; /* Příprava na animaci po najetí myší */
-
+    pointer-events: auto;
 }
 
 .nano-koncerty.schovano
@@ -278,7 +283,7 @@ body {
 #ig-okno{
     position: absolute;
     right: 0;
-    top:130px;
+    top:200px;
 }
 
 #hlavni-zapati {
