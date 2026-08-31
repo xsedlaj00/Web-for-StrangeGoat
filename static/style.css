@@ -241,19 +241,26 @@ body {
     background-color: #65022c;
     text-decoration: none; /* Zbavíme se podtržení odkazu */
     color: #e0e0e0;
-    border-radius: 4px; /* Jemně zaoblené rohy */
+    border-radius: 10px; /* Jemně zaoblené rohy */
     width: 90%; 
     max-width: 400px;
     height: min-content;
     padding-left: 6px;
     z-index: 1;
     transition: opacity 0.3s ease;
+    transition: transform 0.2s ease; /* Příprava na animaci po najetí myší */
+
 }
 
 .nano-koncerty.schovano
 {
     pointer-events: none;
     opacity: 0;
+}
+.nano-koncerty:hover{
+    background-color: #87023a;
+    bottom: 10px;
+    transform: translateY(-5px);
 }
 
 /* Spodní obsah */
