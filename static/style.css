@@ -167,21 +167,10 @@ body {
 #uvodni-stranka
 {   
     padding-top:0;
-    padding-bottom: 20px;
-    min-height: 1400px;
     background-repeat: no-repeat;
     background-position: center -120px;
 }
-#spodni-obsah img
-{
-    position: absolute;
-    top: -100px;
-    z-index: -1;
-    left: 60%; /* Odsune levý okraj obrázku přesně do poloviny obrazovky */
-    transform: translateX(-50%); 
-    opacity: 0.8;
-    /* Cukne s celým obrázkem o polovinu jeho vlastní šířky zpátky doleva, čímž najde dokonalý střed */
-}
+
 #uvodni-stranka ul{
     list-style: none;
     padding: 5px;
@@ -272,18 +261,46 @@ body {
     min-height: 100vh;
     padding-right: 0;
     width: 100%;
+    overflow: hidden;
 }
+#spodni-obsah img
+{
+    position: absolute;
+    top: -80px;
+    z-index: -1;
+    left: 60%; /* Odsune levý okraj obrázku přesně do poloviny obrazovky */
+    transform: translateX(-50%); 
+    opacity: 0.8;
+    /* Cukne s celým obrázkem o polovinu jeho vlastní šířky zpátky doleva, čímž najde dokonalý střed */
+}
+
 #ig-okno{
     position: absolute;
     right: 0;
     top:130px;
 }
-#hlavni-zapati{
-    position: absolute;
+#hlavni-zapati {
+    /* position: absolute; - TOHLE SMAŽ! */
+    position: relative; /* Tohle ho vrátí do normálního světa */
+    z-index: 999;       /* Tohle ho vynese nad tu obří modrou deku */
     display: flex;
-    
+    justify-content: center; /* Vystředí ikonky i text doprostřed obrazovky */
+    align-items: center;
+    flex-direction: column;  /* Poskládá ikonky a text pod sebe */
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.5); /* Lehce průhledná černá pro rockový vibe */
 }
 
+.socialni-ikony a {
+    color: white;
+    font-size: 30px; /* Zvětší ikony */
+    margin: 0 15px;  /* Udělá jim mezery mezi sebou */
+    transition: color 0.3s;
+}
+
+.socialni-ikony a:hover {
+    color: rgba(220, 4, 213, 0.8); /* Při najetí myší zfialoví */
+}
 #hero-nadpis img {
     padding-left: 90px;
 }
