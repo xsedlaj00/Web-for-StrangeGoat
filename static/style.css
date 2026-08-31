@@ -13,9 +13,10 @@ body {
     padding: 0;
 }
 #hlavni-obsah {
-    padding: 40px; /* Aby text nebyl nalepený úplně na hrany obrazovky */
+    padding: 20px; /* Aby text nebyl nalepený úplně na hrany obrazovky */
     transition: margin-left 0.3s ease; /* Zase chceme, aby ten pohyb byl plynulý, jako u menu */
     margin-left: 250px;
+    
 }
 
 /* Tohle pravidlo posune hlavní obsah, když je menu otevřené */
@@ -261,11 +262,18 @@ body {
 #spodni-obsah {
     margin-top: 100vh; /* Začíná až pod první obrazovkou */
     position: relative;
+    outline: 2px solid red;
     z-index: 1; /* Vyjede NAD fotku */
     background-color: transparent; /* Temně šedá, téměř černá */
     min-height: 100vh;
+    padding-right: 0;
+    width: 100%;
 }
-
+#ig-okno{
+    position: absolute;
+    right: 0;
+    top:130px;
+}
 
 @media screen and (max-width: 768px) {
     
@@ -331,5 +339,9 @@ body {
         transform: translateX(-50%); 
         opacity: 0.25;
         /* Cukne s celým obrázkem o polovinu jeho vlastní šířky zpátky doleva, čímž najde dokonalý střed */
+    }
+    #ig-okno{
+        position: relative;
+        filter: invert(1) hue-rotate(180deg);
     }
 }

@@ -33,10 +33,12 @@
 
         <!-- Sem se bude automaticky vkládat obsah konkrétních stránek -->
         {% block obsah %}{% endblock %}
-        </main>
+    </main>
     <script>
+        let otvorene_menu=false;
         function prepniMenu() {
             // Najdeme prvek menu podle jeho ID
+            otvorene_menu = true;
             var menu = document.getElementById("bocni-menu");
             
             // Funkce toggle() buď přidá, nebo odebere třídu "otevreno".
@@ -118,7 +120,7 @@
                 }
                 else 
                     nano.classList.remove("schovano");
-                if (odskrolovano>600 && window.innerWidth>768){
+                if (odskrolovano>600 && window.innerWidth>768&&!otvorene_menu){
                                                     // Najdeme prvek menu podle jeho ID
                     var menu = document.getElementById("bocni-menu");
                     
