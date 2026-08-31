@@ -282,7 +282,7 @@ body {
 #hlavni-zapati {
     /* position: absolute; - TOHLE SMAŽ! */
     position: relative; /* Tohle ho vrátí do normálního světa */
-    z-index: 999;       /* Tohle ho vynese nad tu obří modrou deku */
+    z-index:100;       /* Tohle ho vynese nad tu obří modrou deku */
     display: flex;
     justify-content: center; /* Vystředí ikonky i text doprostřed obrazovky */
     align-items: center;
@@ -296,6 +296,7 @@ body {
     font-size: 30px; /* Zvětší ikony */
     margin: 0 15px;  /* Udělá jim mezery mezi sebou */
     transition: color 0.3s;
+    text-decoration: none;
 }
 
 .socialni-ikony a:hover {
