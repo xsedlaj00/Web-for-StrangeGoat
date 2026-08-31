@@ -16,6 +16,7 @@ body {
     padding: 20px; /* Aby text nebyl nalepený úplně na hrany obrazovky */
     transition: margin-left 0.3s ease; /* Zase chceme, aby ten pohyb byl plynulý, jako u menu */
     margin-left: 250px;
+    min-height: 80.4vh;
     
 }
 
@@ -279,6 +280,7 @@ body {
     right: 0;
     top:130px;
 }
+
 #hlavni-zapati {
     /* position: absolute; - TOHLE SMAŽ! */
     position: relative; /* Tohle ho vrátí do normálního světa */
