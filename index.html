@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strange Goat</title>
+    <link rel="icon" type="image/x-icon" href="static/font.png">
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <button id="menu-tlacitko" onclick="prepniMenu()">☰ MENU</button>
+    <nav id="bocni-menu">
+        <img src="static/goat.png" alt="koza">
+        <ul>
+            <li><a href="index.html">Úvod</a></li>
+            <li><a href="koncerty.html">Koncerty</a></li>
+            <li><a href="hudba.html">Hudba</a></li>
+            <li><a href="galerie.html">Galerie</a></li>
+        </ul>
+    </nav>
+    <button id="login" onclick="Prihlas()"></button>
+
+    <main id="hlavni-obsah">
+        <div id="hero-sekce">
+            <div id="hero-nadpis">
+                <img src="static/font.png" alt="nadpis">            
+            </div>
+            <a href="koncerty.html">
+                <div class="nano-koncerty">
+                    <h2>Přijďte na nás!</h2>
+                    <ul id="nano-koncerty-seznam">
+                        <li>Načítám koncerty...</li>
+                    </ul>
+                </div>
+            </a>
+        </div>
+
+        <div id="spodni-obsah">
+            <h2>Vítejte na oficiálním webu!</h2>
+            <p>Tady budou videa z YouTube, odkaz na Instagram, koncerty a další věci...</p>
+            <img src="static/adu.png" alt="Adu">
+
+            <nav id="uvodni-stranka">
+                <h1>Vítejte v našem digitálním doupěti</h1>
+                <p>Jsme rocková kapela a tohle je náš nový web.</p>
+                
+                <h2>Bio</h2>
+                <p>Tady bude text o tom, jak kapela vznikla...</p>
+
+                <div id="ig-okno"> 
+                    <script src="https://elfsightcdn.com/platform.js" async></script>
+                    <div class="elfsight-app-5582bf76-8cab-40ae-8808-861c050f5ac4" data-elfsight-app-lazy></div>        
+                </div>
+            </nav>
+        </div>
+    </main>
+
+    <footer id="hlavni-zapati">
+        <div class="socialni-ikony">
+            <a href="https://www.youtube.com/@StrangegoatCZ" target="_blank" title="YouTube">
+                <i class="fa-brands fa-youtube"></i>
+            </a>
+            <a href="https://www.instagram.com/strangegoatcz/" target="_blank" title="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+        </div>
+        <div class="copyright-text">
+            <p>&copy; 2026 Strange Goat. Všechna práva vyhrazena.</p>
+        </div>
+    </footer>
+
+    <script>
+        let otvorene_menu = false;
+
+        function prepniMenu() {
+            otvorene_menu = !otvorene_menu;
+            document.getElementById("bocni-menu").classList.toggle("otevreno");
+            document.getElementById("hlavni-obsah").classList.toggle("posunuto");
+            document.getElementById("menu-tlacitko").classList.toggle("zmiz");
+        }
+
+        function Prihlas() {
+            window.location.href = "spravce.html";
+        }
+
+        // Načítání 2 nejbližších koncertů z JSON
+        fetch('koncerty.json')
+            .then(response => response.json())
+            .then(data => {
+                const ul = document.getElementById('nano-koncerty-seznam');
+                ul.innerHTML = '';
+                const nejblizsi = data.slice(0, 2);
+                
+                if (nejblizsi.length === 0) {
+                    ul.innerHTML = '<li>Zrovna není naplánovaný žádný koncert.</li>';
+                } else {
+                    nejblizsi.forEach(k => {
+                        const li = document.createElement('li');
+                        li.textContent = `${k.datum} - ${k.misto}`;
+                        ul.appendChild(li);
+                    });
+                }
+            })
+            .catch(err => {
+                document.getElementById('nano-koncerty-seznam').innerHTML = '<li>Nepodařilo se načíst koncerty.</li>';
+            });
+
+        // Animace smršťování hero sekce
+        window.addEventListener("scroll", function() {
+            var hero = document.getElementById("hero-sekce");
+            if (hero) {
+                var odskrolovano = window.scrollY;
+                var vyskaOkna = window.innerHeight;
+                var vypocitanaVyska = vyskaOkna - odskrolovano;
+                hero.style.height = Math.max(120, vypocitanaVyska) + "px";
+            }
+
+            var nano = document.querySelector(".nano-koncerty");
+            if (nano) {
+                var odskrolovano = window.scrollY;
+                if (odskrolovano > 940) {
+                    nano.classList.add("schovano");
+                } else {
+                    nano.classList.remove("schovano");
+                }
+            }
+        });
+
+        // LERP Vyhlazení zmenšování loga
+        let aktualniScale = 1;
+        let cilovaScale = 1;
+
+        window.addEventListener("scroll", function() {
+            var odskrolovano = window.scrollY;
+            var skale = 1 - (odskrolovano / 1200);
+            cilovaScale = (window.innerWidth > 768) ? Math.max(0.2, skale) : Math.max(0.5, skale);
+        });
+
+        function animuj() {
+            var logo = document.querySelector("#hero-nadpis img");
+            if (logo) {
+                aktualniScale += (cilovaScale - aktualniScale) * 0.15;
+                logo.style.transform = "scale(" + aktualniScale + ")";
+            }
+            requestAnimationFrame(animuj);
+        }
+        animuj();
+    </script>
+</body>
+</html>

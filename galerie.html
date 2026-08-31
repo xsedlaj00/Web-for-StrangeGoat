@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerie - Strange Goat</title>
+    <link rel="icon" type="image/x-icon" href="static/font.png">
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <button id="menu-tlacitko" onclick="prepniMenu()">☰ MENU</button>
+    <nav id="bocni-menu">
+        <img src="static/goat.png" alt="koza">
+        <ul>
+            <li><a href="index.html">Úvod</a></li>
+            <li><a href="koncerty.html">Koncerty</a></li>
+            <li><a href="hudba.html">Hudba</a></li>
+            <li><a href="galerie.html">Galerie</a></li>
+        </ul>
+    </nav>
+
+    <main id="hlavni-obsah">
+        <nav id="back-kontejner">
+            <button id="back-tlacitko" onclick="window.location.href='index.html'">
+                <img src="static/sipka.png" alt="Zpět">
+            </button>
+        </nav>
+
+        <h1>Zde fotky</h1>
+        <div class="galerie-mrizka" id="galerie-mrizka">Načítám fotogalerii...</div>
+    </main>
+
+    <footer id="hlavni-zapati">
+        <div class="socialni-ikony">
+            <a href="https://www.youtube.com/@StrangegoatCZ" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.instagram.com/strangegoatcz/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+        <div class="copyright-text">
+            <p>&copy; 2026 Strange Goat. Všechna práva vyhrazena.</p>
+        </div>
+    </footer>
+
+    <script>
+        function prepniMenu() {
+            document.getElementById("bocni-menu").classList.toggle("otevreno");
+            document.getElementById("hlavni-obsah").classList.toggle("posunuto");
+            document.getElementById("menu-tlacitko").classList.toggle("zmiz");
+        }
+
+        fetch('galerie.json')
+            .then(res => res.json())
+            .then(data => {
+                const mrizka = document.getElementById('galerie-mrizka');
+                mrizka.innerHTML = '';
+                data.forEach(album => {
+                    const a = document.createElement('a');
+                    a.href = `album_detail.html?id=${album.id}`;
+                    a.className = 'album-dlazdice';
+                    a.innerHTML = `
+                        <div class="obrazek-kontejner">
+                            <img src="static/${album.uvodni_fotka}" alt="${album.nazev}">
+                        </div>
+                        <div class="album-info">
+                            <h3>${album.nazev}</h3>
+                            <p>${album.datum}</p>
+                        </div>
+                    `;
+                    mrizka.appendChild(a);
+                });
+            });
+    </script>
+</body>
+</html>

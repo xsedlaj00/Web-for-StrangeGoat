@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Alba - Strange Goat</title>
+    <link rel="icon" type="image/x-icon" href="static/font.png">
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <button id="menu-tlacitko" onclick="prepniMenu()">☰ MENU</button>
+    <nav id="bocni-menu">
+        <img src="static/goat.png" alt="koza">
+        <ul>
+            <li><a href="index.html">Úvod</a></li>
+            <li><a href="koncerty.html">Koncerty</a></li>
+            <li><a href="hudba.html">Hudba</a></li>
+            <li><a href="galerie.html">Galerie</a></li>
+        </ul>
+    </nav>
+
+    <main id="hlavni-obsah">
+        <nav id="back-kontejner">
+            <button id="back-tlacitko" onclick="window.location.href='galerie.html'">
+                <img src="static/sipka.png" alt="Zpět do galerie">
+            </button>
+        </nav>
+
+        <h1 id="album-nazev">Načítám album...</h1>
+        <div id="album-fotky" style="display: flex; flex-wrap: wrap; gap: 15px;"></div>
+    </main>
+
+    <footer id="hlavni-zapati">
+        <div class="socialni-ikony">
+            <a href="https://www.youtube.com/@StrangegoatCZ" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.instagram.com/strangegoatcz/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+        <div class="copyright-text">
+            <p>&copy; 2026 Strange Goat. Všechna práva vyhrazena.</p>
+        </div>
+    </footer>
+
+    <script>
+        function prepniMenu() {
+            document.getElementById("bocni-menu").classList.toggle("otevreno");
+            document.getElementById("hlavni-obsah").classList.toggle("posunuto");
+            document.getElementById("menu-tlacitko").classList.toggle("zmiz");
+        }
+
+        // Zjistíme ID z URL (např. album_detail.html?id=1)
+        const urlParams = new URLSearchParams(window.location.search);
+        const idAlba = urlParams.get('id');
+
+        fetch('galerie.json')
+            .then(res => res.json())
+            .then(vsechnaAlba => {
+                const album = vsechnaAlba.find(a => String(a.id) === String(idAlba));
+                if (!album) {
+                    document.getElementById('album-nazev').textContent = 'Album nenalezeno';
+                    return;
+                }
+                
+                document.getElementById('album-nazev').textContent = album.nazev;
+                const container = document.getElementById('album-fotky');
+                container.innerHTML = '';
+                
+                album.vsechny_fotky.forEach(fotka => {
+                    const img = document.createElement('img');
+                    img.src = `static/${fotka}`;
+                    img.style.maxWidth = '300px';
+                    img.style.borderRadius = '8px';
+                    container.appendChild(img);
+                });
+            });
+    </script>
+</body>
+</html>
