@@ -308,6 +308,38 @@ body {
     padding-left: 90px;
 }
 
+/* 1. Obal, který nám fotky poskládá do mřížky vedle sebe */
+.album-detail-mrizka {
+    display: grid;
+    /* Fotky budou mít min. 250px, poskládají se automaticky vedle sebe */
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    gap: 15px; 
+}
+
+/* 2. Pevně definovaný tvar pro JEDNU fotku */
+.detail-fotka-kontejner {
+    width: 100%;
+    
+    /* OTAZNÍK 1: Jakou vlastností v CSS řekneš, že kontejner má mít tvar 
+       dokonalého čtverce (1:1) nebo třeba obdélníku (4:3)? */
+    aspect-ratio: 5/3;
+       
+    /* OTAZNÍK 2: Co musíme udělat s částmi obrázku, 
+       které by se do tohoto tvaru nevešly a chtěly by "přetéct" ven? */
+    overflow: hidden;
+}
+
+/* 3. Samotný obrázek uvnitř tvaru */
+.detail-fotka-kontejner img {
+    width: 100%;
+    height: 100%;
+    
+    /* OTAZNÍK 3: Tohle je ta absolutně nejdůležitější magie! 
+       Jaká vlastnost zajistí, že se fotka nerozplácne ani nesmáčkne, 
+       ale plynule vyplní náš čtverec/obdélník (byť se z ní kousek ořízne)? */
+    object-fit: cover;
+}
+
 
 @media screen and (max-width: 768px) {
     

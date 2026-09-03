@@ -1,25 +1,18 @@
 [
     {
-        "id": "melodka",
-        "datum": "24. srpna 2026",
-        "nazev": "Melodka Brno",
-        "uvodni_fotka": "kapela.jpg",
+        "id": "StudentFest",
+        "datum": "7.května 2026",
+        "nazev": "Student Fest",
+        "uvodni_fotka": "P5070523.JPG",
         "vsechny_fotky": 
         [
-            "kapela.jpg",
-            "kapela.jpg",
-            "kapela.jpg"
-        ]
-    },
-    {
-        "id": "zkusebna",
-        "nazev": "Dřina ve zkušebně",
-        "datum": "15. září 2026",
-        "uvodni_fotka": "kapela.jpg",
-        "vsechny_fotky": 
-        [
-            "kapela.jpg",
-            "kapela.jpg"
+            "P5070456.jpg",
+            "P5070497 (1).JPG",
+            "P5070505.JPG",
+            "P5070509.jpg",
+            "P5070523.jpg",
+            "P5070523.JPG",
+            "P5070541.JPG"
         ]
     }
 ]
