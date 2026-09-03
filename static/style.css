@@ -206,13 +206,15 @@ body {
     left: 0;
     width: 100%;
     height: 100vh; /* 100 % výšky obrazovky */
-    background-image: url('/static/kapela.jpg');
+    background-image: url('/static/StudentFest/P5070505.JPG');
     background-size: cover;
+    object-fit: cover;
     background-position: center 25%;
     z-index: 2; /* Aby byla fotka pod hlavním menu */
     display: flex;
     justify-content: center;
     align-items: center;
+    pointer-events: none;
 }
 /* Třída pro zmenšenou fotku */
 #hero-sekce.smrsteno {
@@ -221,6 +223,7 @@ body {
 
 #hero-nadpis img {
     position: relative;
+    filter: invert(100%);
 }
 /* nejblizsi koncerty*/
 .nano-koncerty
@@ -239,7 +242,7 @@ body {
     z-index: 1;
     transition: opacity 0.3s ease;
     transition: transform 0.2s ease; /* Příprava na animaci po najetí myší */
-
+    pointer-events: auto;
 }
 
 .nano-koncerty.schovano
