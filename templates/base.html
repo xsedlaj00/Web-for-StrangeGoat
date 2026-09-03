@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 </head>
-<body>
-
+<!--forbids right click menu-->
+<body oncontextmenu="return false">    
     <button id="menu-tlacitko" onclick="prepniMenu()">☰ MENU</button>
     <nav id="bocni-menu">
         <img src="/static/goat.png" alt="koza">
@@ -141,6 +141,14 @@
             }
         });
 
+        /* Potencial music download block
+            // Najde všechny audio přehrávače na načtené stránce
+            const prehravace = document.querySelectorAll('audio');
+            // Všem hromadně přidá atribut proti stahování
+            prehravace.forEach(audio => {
+                audio.setAttribute('controlsList', 'nodownload');
+            });
+        */
     </script>
 
     <footer id="hlavni-zapati">
