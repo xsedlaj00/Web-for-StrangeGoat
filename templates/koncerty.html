@@ -1,12 +1,20 @@
 {% extends "base.html" %}
-
+{% block trida_stranky %}stranka-koncerty{% endblock %}
 {% block obsah %}
-
-    <nav id="koncerty">
-    <h2>Nadcházející koncerty</h2>
-    <ul>
-        {% for koncert in koncerty_do_html %}
-            <li>{{ koncert.datum }} - {{ koncert.misto }}</li>
-        {% endfor %}
-    </ul>
+    <section id="koncerty">
+        <div class="tour-header">
+            <h2>VYSTOUPENÍ</h2>
+        </div>
+        
+        <ul class="tour-list">
+            {% for koncert in koncerty_do_html %}
+                <li class="tour-item">
+                    <div class="tour-date">{{ koncert.datum }}</div>
+                    <div class="tour-venue">{{ koncert.misto }}</div>
+                    
+                    <div class="tour-location">{{ koncert.mesto }}</div>
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
 {% endblock %}

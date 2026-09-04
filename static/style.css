@@ -8,11 +8,94 @@ body {
     margin: 0; /* Vymaže výchozí bílé okraje prohlížeče */
     overflow-x: hidden;    
 }
-#koncerty ul{
+body.stranka-koncerty {
+    background-color: #0b2e29;
+}
+#koncerty {
+    background-color: #0b2e29; 
+    color: #ffffff;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    padding: 60px 20px;
+}
 
+/* --- NADPIS S ČARAMI --- */
+#koncerty .tour-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Vygenerování čar nalevo a napravo od nadpisu */
+#koncerty .tour-header::before,
+#koncerty .tour-header::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    margin: 0 20px;
+}
+
+#koncerty h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+/* --- SEZNAM KONCERTŮ --- */
+#koncerty .tour-list {
     list-style: none;
     padding: 0;
+    max-width: 1000px;
+    margin: 0 auto;
+}
 
+/* --- JEDNOTLIVÝ ŘÁDEK --- */
+.tour-item {
+    display: grid;
+    /* Rozdělení do 3 sloupců: Datum (nejmenší), Klub a Město (větší) */
+    grid-template-columns: 1fr 2fr 2fr; 
+    align-items: center;
+    padding: 25px 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Jemná dělící čára */
+    transition: background-color 0.2s ease;
+}
+
+/* Zvýraznění řádku po najetí myší */
+.tour-item:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Styl pro jednotlivé sloupce */
+.tour-date {
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.tour-venue {
+    font-size: 1.05rem;
+}
+
+.tour-location {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.7); /* Mírně ztlumená barva pro lokaci */
+}
+
+/* --- RESPONZIVITA PRO MOBILY --- */
+@media (max-width: 768px) {
+    .tour-item {
+        /* Na malých obrazovkách zrušíme sloupce a naskládáme obsah pod sebe */
+        grid-template-columns: 1fr; 
+        gap: 8px;
+        text-align: center;
+        padding: 20px 10px;
+    }
 }
 #hlavni-obsah {
     padding: 20px; /* Aby text nebyl nalepený úplně na hrany obrazovky */

@@ -1,18 +1,22 @@
 [
     {
-        "datum": "24. srpna",
-        "misto": "Melodka, Brno"
-    },
-    {
-        "datum": "15. září",
-        "misto": "Podzimní festival, Praha"
+        "datum": "1. října",
+        "mesto": "Žďár n. Sáz.",
+        "misto": "Národní Fronta Fest"
     },
     {
         "datum": "1. října",
-        "misto": "Národní Fronta Fest, Žďár n. Sáz."
+        "mesto": "Žďár n. Sáz.",
+        "misto": "Národní Fronta Fest"
+    },
+    {
+        "datum": "1. října",
+        "mesto": "Žďár n. Sáz.",
+        "misto": "Národní Fronta Fest"
     },
     {
         "datum": "20. října",
-        "misto": "Klub Mír, Uherské Hradiště"
+        "mesto": "Uherské Hradiště",
+        "misto": "Klub Mír"
     }
 ]
