@@ -372,11 +372,6 @@ body {
            menu ho prostě překryje */
         margin-left: 0;
     }
-
-    .hero-nadpis img {
-        /* Obří nadpis by se na mobil nemusel vejít na řádek, trochu ho zmenšíme */
-        scale: 0.5;
-    }
     
     #hero-sekce {
         /* Upravíme pozici fotky, aby na malém displeji na výšku kapela nevypadla ze záběru */
@@ -428,6 +423,6 @@ body {
         position: relative;
     }
     #hero-nadpis img {
-    scale: 0.4;
+    scale: 0.3;
     }
 }
