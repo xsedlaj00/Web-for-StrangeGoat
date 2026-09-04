@@ -9,8 +9,10 @@ body {
     overflow-x: hidden;    
 }
 #koncerty ul{
+
     list-style: none;
     padding: 0;
+
 }
 #hlavni-obsah {
     padding: 20px; /* Aby text nebyl nalepený úplně na hrany obrazovky */
@@ -262,11 +264,11 @@ body {
     position: relative;
     z-index: 1; /* Vyjede NAD fotku */
     background-color: transparent; /* Temně šedá, téměř černá */
-    min-height: 100vh;
+    min-height: 150vh;
     padding-right: 0;
     width: 100%;
-    overflow: hidden;
 }
+
 #spodni-obsah img
 {
     position: absolute;
@@ -279,9 +281,22 @@ body {
 }
 
 #ig-okno{
-    position: absolute;
+    position: relative;
     right: 0;
+    left: auto;
     top:130px;
+    z-index: 2;
+    width: 300px;
+}
+#bandcamp-okno{
+    position: relative;
+    padding-top: 40px;
+
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    
+    pointer-events: auto;
 }
 
 #hlavni-zapati {
@@ -358,9 +373,9 @@ body {
         margin-left: 0;
     }
 
-    .hero-nadpis {
+    .hero-nadpis img {
         /* Obří nadpis by se na mobil nemusel vejít na řádek, trochu ho zmenšíme */
-        font-size: 2rem; 
+        scale: 0.5;
     }
     
     #hero-sekce {

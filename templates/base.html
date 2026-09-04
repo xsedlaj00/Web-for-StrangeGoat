@@ -10,7 +10,7 @@
 
 </head>
 <!--forbids right click menu-->
-<body oncontextmenu="return false">    
+<body>    
     <button id="menu-tlacitko" onclick="prepniMenu()">☰ MENU</button>
     <nav id="bocni-menu">
         <img src="/static/goat.png" alt="koza">
@@ -116,14 +116,20 @@
                 
                 // 3. Vypočítej novou výšku: (výška okna MÍNUS to, co jsme odskrolovali)
                 var vypocitanaVyska = vyskaOkna - odskrolovano;
-                
+                if (odskrolovano>320 && window.innerWidth<768)
+                {
+                    nano.classList.add("schovano");
+                }
+                else
+                {
                 if (odskrolovano>940){
                     nano.classList.add("schovano");
                     
                 }
                 else 
                     nano.classList.remove("schovano");
-                if (odskrolovano>600 && window.innerWidth>768&&!otvorene_menu){
+                }
+                if (odskrolovano>500 && window.innerWidth>768&&!otvorene_menu){
                                                     // Najdeme prvek menu podle jeho ID
                     var menu = document.getElementById("bocni-menu");
                     

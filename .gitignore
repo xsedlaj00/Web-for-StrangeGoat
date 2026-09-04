@@ -2,4 +2,4 @@
 __pycache__/
 *.pyc
 .key
-.key.pub
+ssh-key-2026-09-03.key.pub
