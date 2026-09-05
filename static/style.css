@@ -519,7 +519,7 @@ body.stranka-koncerty {
         position: relative;
     }
     #hero-nadpis img {
-    scale: 0.3;
+    scale: 0.28;
     }
 
     .tour-item {
@@ -554,5 +554,9 @@ body.stranka-koncerty {
         
         /* 3. Tohle přilepí ten 150px široký iframe na levý okraj této 320px krabice */
         justify-content: flex-start; 
+    }
+    .nano-koncerty
+    {
+        right: 0;
     }
 }
