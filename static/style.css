@@ -559,4 +559,8 @@ body.stranka-koncerty {
     {
         right: 0;
     }
+    #spodni-obsah{
+        min-height: 180vh;
+
+    }
 }
