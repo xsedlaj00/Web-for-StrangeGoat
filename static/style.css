@@ -87,16 +87,6 @@ body.stranka-koncerty {
     color: rgba(255, 255, 255, 0.7); /* Mírně ztlumená barva pro lokaci */
 }
 
-/* --- RESPONZIVITA PRO MOBILY --- */
-@media (max-width: 768px) {
-    .tour-item {
-        /* Na malých obrazovkách zrušíme sloupce a naskládáme obsah pod sebe */
-        grid-template-columns: 1fr; 
-        gap: 8px;
-        text-align: center;
-        padding: 20px 10px;
-    }
-}
 #hlavni-obsah {
     padding: 20px; /* Aby text nebyl nalepený úplně na hrany obrazovky */
     transition: margin-left 0.3s ease; /* Zase chceme, aby ten pohyb byl plynulý, jako u menu */
@@ -427,6 +417,7 @@ body.stranka-koncerty {
 .socialni-ikony a:hover {
     color: rgba(220, 4, 213, 0.8); /* Při najetí myší zfialoví */
 }
+
 #hero-nadpis img {
     padding-left: 90px;
 }
@@ -529,5 +520,39 @@ body.stranka-koncerty {
     }
     #hero-nadpis img {
     scale: 0.3;
+    }
+
+    .tour-item {
+        /* Na malých obrazovkách zrušíme sloupce a naskládáme obsah pod sebe */
+        grid-template-columns: 1fr; 
+        gap: 8px;
+        text-align: center;
+        padding: 20px 10px;
+    }
+    #widgety{
+        position: relative;    
+        top: 0px;
+        padding: 0;
+        /* OTAZNÍK 1: Jak zapneš tenhle moderní režim rozvržení? */
+        display: flex;
+        
+        /* OTAZNÍK 2: Výchozí chování dává věci vedle sebe do řádku. 
+           Jak Flexboxu řekneš, aby widgety poskládal pěkně pod sebe do sloupce? */
+        flex-direction: column;
+        
+        /* OTAZNÍK 3: Jaká vlastnost (kterou jsi použil v patičce) 
+           zarovná všechny tyto položky ve sloupci přesně na vodorovný střed? */
+        align-items: center;
+        pointer-events: auto;
+    }
+    #bandcamp-okno {
+        /* 1. Nastavíme obalu stejnou šířku, jako mívá Instagram na mobilu */
+        width: 280px; 
+        
+        /* 2. Zapneme v něm Flexbox, ať můžeme zarovnávat obsah uvnitř */
+        display: flex;
+        
+        /* 3. Tohle přilepí ten 150px široký iframe na levý okraj této 320px krabice */
+        justify-content: flex-start; 
     }
 }
