@@ -1,4 +1,5 @@
-from flask import Flask, render_template, request, session
+from flask import Flask, render_template, request, session, redirect
+from flask_babel import Babel
 import json
 import os
 import datetime
@@ -14,6 +15,17 @@ app = Flask(__name__)
 app.secret_key = os.getenv("SECRET_KEY")# (nebo si to časem dej taky do .env)
 app.config['PERMANENT_SESSION_LIFETIME'] =datetime.timedelta(minutes=30)
 
+def lang():
+    return session.get('jazyk', 'cs')
+    
+babel = Babel(app, locale_selector=lang)
+
+
+
+@app.route('/set_lang/<jazyk>')
+def zmenit_jazyk(jazyk):
+    session['jazyk']=jazyk
+    return redirect('/')
 # Cesta 1: Úvodní stránka (index.html)
 @app.route('/')
 def home():
@@ -78,6 +90,6 @@ def spravce():
     else:
         # Zobrazení přihlašovacího formuláře (stránka, kterou už máš hotovou)
         return render_template('spravce.html')
-    
+
 if __name__ == '__main__':
     app.run(debug=True)
