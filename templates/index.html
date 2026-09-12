@@ -6,15 +6,15 @@
             </div>
             <a href="/koncerty">
             <div class="nano-koncerty">
-            <h2>Přijďte na nás!</h2>
+            <h2>{{_('Přijďte na nás!')}}</h2>
             <ul>
             {% for koncert in koncerty_do_html[0:2] %}
                 {% if koncert is not none %}
                     <li>{{ koncert.datum }} - {{ koncert.misto }}</li>
                 {%endif%}
             {%else%}
-                <li>Zrovna není naplánovaný žádný koncert
-                    Vymyslíš něco?
+                <li>{{_('Zrovna není naplánovaný žádný koncert')}}
+                    {{_('Vymyslíš něco?')}}
                 </li>
 
             {% endfor %}

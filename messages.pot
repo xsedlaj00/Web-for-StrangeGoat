@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-09-11 13:16+0200\n"
+"POT-Creation-Date: 2026-09-12 11:07+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,5 +31,33 @@ msgstr ""
 
 #: templates/base.html:22
 msgid "Galerie"
+msgstr ""
+
+#: templates/galerie.html:3
+msgid "Zde fotky"
+msgstr ""
+
+#: templates/index.html:9
+msgid "Přijďte na nás!"
+msgstr ""
+
+#: templates/index.html:16
+msgid "Zrovna není naplánovaný žádný koncert"
+msgstr ""
+
+#: templates/index.html:17
+msgid "Vymyslíš něco?"
+msgstr ""
+
+#: templates/koncerty.html:6
+msgid "VYSTOUPENÍ"
+msgstr ""
+
+#: templates/pisne.html:4
+msgid "Naše hudba"
+msgstr ""
+
+#: templates/pisne.html:9
+msgid "Váš prohlížeč nepodporuje přehrávač zvuku."
 msgstr ""
 

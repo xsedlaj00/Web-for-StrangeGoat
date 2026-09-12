@@ -109,7 +109,7 @@ body.stranka-koncerty {
     background-color: #0b5075c0; /* O něco světlejší černá než zbytek webu, aby se to oddělilo */
     transition: left 0.3s ease; /* Když se změní vlastnost left, ať se to stane plynule za 0.3 vteřiny */
     padding-top: 60px; /* Odsazení odshora, aby odkazy nebyly nalepené na horní hranu */
-    z-index: 90;
+    z-index: 6;
 }
 
 #bocni-menu a {
@@ -148,7 +148,7 @@ body.stranka-koncerty {
     border: none;
     padding: 15px;
     position: fixed;
-    z-index: 1001; /* Zajistí, že tlačítko bude vždy úplně nahoře nad vším ostatním */
+    z-index: 7; /* Zajistí, že tlačítko bude vždy úplně nahoře nad vším ostatním */
 }
 #menu-tlacitko::before {
     
@@ -182,6 +182,13 @@ body.stranka-koncerty {
     opacity: 0.6; 
 
     background-position: +30px;
+}
+#jazyk-switch
+{
+    position: fixed; 
+    top: 15px; 
+    right: 20px;
+    z-index: 7;
 }
 
 /* Definice mřížky */

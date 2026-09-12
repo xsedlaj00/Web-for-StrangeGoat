@@ -11,6 +11,11 @@
 </head>
 <!--forbids right click menu-->
 <body class="{% block trida_stranky %}{% endblock %}">
+
+    <div id="jazyk-switch" >
+        <a href="/set_lang/cs">CZ</a> | <a href="/set_lang/en">EN</a>
+    </div>
+
     <button id="menu-tlacitko" onclick="prepniMenu()">☰ MENU</button>
     <nav id="bocni-menu">
         <img src="/static/goat.png" alt="koza">
@@ -168,7 +173,7 @@
             </div>
 
         <div class="copyright-text">
-            <p>&copy; 2026 Strange Goat. Všechna práva vyhrazena.</p>
+            <p>&copy; 2026 Strange Goat. All rights reserved</p>
         </div>
     </footer>
 </body>
