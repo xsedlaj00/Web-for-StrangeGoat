@@ -40,7 +40,7 @@ msgstr "Photos in here"
 
 #: templates/index.html:9
 msgid "Přijďte si nás poslechnout!"
-msgstr "Come to listen to us"
+msgstr "Come listen to us"
 
 #: templates/index.html:16
 msgid "Zrovna není naplánovaný žádný koncert"

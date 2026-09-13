@@ -461,6 +461,23 @@ body.stranka-koncerty {
     object-fit: cover;
 }
 
+.band-bio-box {
+    /* Omezení šířky a vycentrování na střed */
+    max-width: 620px;
+    margin: 2rem auto; 
+    position: absolute;
+    left: 0;
+    padding-top: 0;
+    /* Vnitřní prostor a zarovnání textu */
+    padding: 1.5rem 2rem;
+    text-align: center; 
+    
+    /* Volitelné: lehké zakulacení rohů */
+    border-radius: 4px;
+    
+    /* Volitelné: stín pro "vytažení" do popředí */
+}
+
 
 @media screen and (max-width: 768px) {
     
