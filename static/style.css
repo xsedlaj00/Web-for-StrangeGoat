@@ -344,7 +344,7 @@ body.stranka-koncerty {
     position: relative;
     z-index: 1; /* Vyjede NAD fotku */
     background-color: transparent; /* Temně šedá, téměř černá */
-    min-height: 150dvh;
+    min-height: 100dvh;
     padding-right: 0;
     width: 100%;
 }
@@ -584,7 +584,7 @@ body.stranka-koncerty {
         right: 0;
     }
     #spodni-obsah{
-        min-height: 180dvh;
+        min-height: 110dvh;
 
     }
 }
