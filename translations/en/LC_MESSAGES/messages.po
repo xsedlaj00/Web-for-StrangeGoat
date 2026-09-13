@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-09-12 11:07+0200\n"
-"PO-Revision-Date: 2026-09-12 11:07+0200\n"
+"POT-Creation-Date: 2026-09-13 14:40+0200\n"
+"PO-Revision-Date: 2026-09-13 14:41+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
 "Language-Team: en <LL@li.org>\n"
@@ -18,47 +18,71 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.18.0\n"
 
-#: templates/base.html:19
+#: templates/base.html:24
 msgid "Úvod"
-msgstr "Main"
+msgstr "Main Page"
 
-#: templates/base.html:20
+#: templates/base.html:25
 msgid "Koncerty"
-msgstr ""
+msgstr "Concerts"
 
-#: templates/base.html:21
+#: templates/base.html:26
 msgid "Hudba"
-msgstr ""
+msgstr "Music"
 
-#: templates/base.html:22
+#: templates/base.html:27
 msgid "Galerie"
-msgstr ""
+msgstr "Gallery"
 
 #: templates/galerie.html:3
 msgid "Zde fotky"
-msgstr ""
+msgstr "Photos in here"
 
 #: templates/index.html:9
-msgid "Přijďte na nás!"
-msgstr ""
+msgid "Přijďte si nás poslechnout!"
+msgstr "Come to listen to us"
 
 #: templates/index.html:16
 msgid "Zrovna není naplánovaný žádný koncert"
-msgstr ""
+msgstr "We do not have any concerts planned currently"
 
 #: templates/index.html:17
-msgid "Vymyslíš něco?"
-msgstr ""
+msgid "Pozvěte si nás. :)"
+msgstr "Invite us somewhere. :)"
+
+#: templates/index.html:29
+msgid "Vítejte na oficiálním webu naší kapely!"
+msgstr "Welcome to our Oficial Website"
+
+#: templates/index.html:30
+msgid ""
+"Najdete zde odkazy na naše sociální sítě, plánované koncerty, galerii a "
+"audio."
+msgstr "Here you will find links to our social media, upcoming concerts, gallery, and "
+"audio."
+
+#: templates/index.html:36
+msgid "Bio"
+msgstr "BIO"
+
+#: templates/index.html:37
+msgid ""
+"Jsme tvrďácká (občas i méně tvrďácká) Punk-rocková kapela. Složená z "
+"mladých respektovatelných gentlemanů s cílem ovládnout svět a vymýt "
+"mozky."
+msgstr "We're a badass (and sometimes slightly less badass) punk rock band"
+" made up of young, respectable gentlemen on a mission"
+" to take over the world and brainwash the masses."
 
 #: templates/koncerty.html:6
 msgid "VYSTOUPENÍ"
-msgstr ""
+msgstr "Tour"
 
 #: templates/pisne.html:4
 msgid "Naše hudba"
-msgstr ""
+msgstr "Our music"
 
 #: templates/pisne.html:9
 msgid "Váš prohlížeč nepodporuje přehrávač zvuku."
-msgstr ""
+msgstr "Your browser does not support audio playback"
 

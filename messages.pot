@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-09-12 11:07+0200\n"
+"POT-Creation-Date: 2026-09-13 14:40+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,19 +17,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.18.0\n"
 
-#: templates/base.html:19
+#: templates/base.html:24
 msgid "Úvod"
 msgstr ""
 
-#: templates/base.html:20
+#: templates/base.html:25
 msgid "Koncerty"
 msgstr ""
 
-#: templates/base.html:21
+#: templates/base.html:26
 msgid "Hudba"
 msgstr ""
 
-#: templates/base.html:22
+#: templates/base.html:27
 msgid "Galerie"
 msgstr ""
 
@@ -38,7 +38,7 @@ msgid "Zde fotky"
 msgstr ""
 
 #: templates/index.html:9
-msgid "Přijďte na nás!"
+msgid "Přijďte si nás poslechnout!"
 msgstr ""
 
 #: templates/index.html:16
@@ -46,7 +46,28 @@ msgid "Zrovna není naplánovaný žádný koncert"
 msgstr ""
 
 #: templates/index.html:17
-msgid "Vymyslíš něco?"
+msgid "Pozvěte si nás. :)"
+msgstr ""
+
+#: templates/index.html:29
+msgid "Vítejte na oficiálním webu naší kapely!"
+msgstr ""
+
+#: templates/index.html:30
+msgid ""
+"Najdete zde odkazy na naše sociální sítě, plánované koncerty, galerii a "
+"audio."
+msgstr ""
+
+#: templates/index.html:36
+msgid "Bio"
+msgstr ""
+
+#: templates/index.html:37
+msgid ""
+"Jsme tvrďácká (občas i méně tvrďácká) Punk-rocková kapela. Složená z "
+"mladých respektovatelných gentlemanů s cílem ovládnout svět a vymýt "
+"mozky."
 msgstr ""
 
 #: templates/koncerty.html:6
