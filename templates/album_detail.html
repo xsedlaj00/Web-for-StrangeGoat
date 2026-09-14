@@ -2,14 +2,17 @@
 
 {% block obsah %}
 
-    <h1> {{album.nazev}}</h1>    
+<h1> {{album.nazev}}</h1>    
     <div class="album-detail-mrizka">
-        {% for fotka in album.fotky_LQ %}
-            <a href="/static/{{album.id}}/{{fotka}}" class="detail-fotka-kontejner">
-                <img src = "/static/{{album.id}}/{{fotka}}"> 
+        {% for fotka_webp in album.fotky_LQ %}
+            
+            {% set fotka_jpg = album.vsechny_fotky[loop.index0] %}
+            
+            <a href="/static/{{album.id}}/{{fotka_jpg}}" class="detail-fotka-kontejner">
+                <img src="/static/{{album.id}}/{{fotka_webp}}" alt="Fotka z akce"> 
             </a>
+            
         {% endfor %}
     </div>
-
 
 {% endblock %}
