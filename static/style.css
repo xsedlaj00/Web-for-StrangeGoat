@@ -135,7 +135,8 @@ body.stranka-koncerty {
     left: -250px; /* Posune menu zpět na nulovou souřadnici (bude vidět) */
 }
 #bocni-menu img {
-    width: 80px; /* Definuje fixní šířku, můžeš si číslo libovolně upravit */
+    width: 220px; /* Definuje fixní šířku, můžeš si číslo libovolně upravit */
+    filter: invert(1);
     display: block; /* Umožní nám s obrázkem lépe manipulovat */
     margin: 0 auto 30px auto; /* Tento trik s 'auto' vycentruje kozu doprostřed menu a přidá pod ní 30px mezeru */
 }
@@ -169,18 +170,18 @@ body.stranka-koncerty {
     opacity: 0.0; 
     transition: 0.3s ease; /* Když se změní vlastnost left, ať se to stane plynule za 0.3 vteřiny */
 
-    
     /* 5. A sem vlož ty tři původní řádky s kozou z předchozího pokusu */
     background-image: url('/static/goat.png'); 
-    background-size: 60px 40px;
+    background-size: 80px 60px;
     background-repeat: no-repeat; 
     background-position: 0;
 }
 #menu-tlacitko.zmiz::before {
     
     /* 4. Tady nastavíme onu kýženou průhlednost (0.2 znamená 20 % viditelnosti) */
-    opacity: 0.6; 
-
+    opacity: 0.7; 
+    
+    filter: invert(1);
     background-position: +30px;
 }
 #jazyk-switch
@@ -292,6 +293,7 @@ body.stranka-koncerty {
     background-size: cover;
     object-fit: cover;
     background-position: center 25%;
+    
     z-index: 2; /* Aby byla fotka pod hlavním menu */
     display: flex;
     justify-content: center;
@@ -356,13 +358,13 @@ body.stranka-koncerty {
     z-index: -1;
     left: 60%; /* Odsune levý okraj obrázku přesně do poloviny obrazovky */
     transform: translateX(-50%); 
-    opacity: 0.8;
+    opacity: 0.4;
     /* Cukne s celým obrázkem o polovinu jeho vlastní šířky zpátky doleva, čímž najde dokonalý střed */
 }
 #widgety{
     position: absolute; 
     right:0; 
-    top: 130px;
+    top: 0px;
     pointer-events: auto;
     padding: 40px;
 }
@@ -464,8 +466,8 @@ body.stranka-koncerty {
 .band-bio-box {
     /* Omezení šířky a vycentrování na střed */
     max-width: 620px;
-    margin: 2rem auto; 
-    position: absolute;
+    margin: 2rem 40px; 
+    position: relative  ;
     left: 0;
     padding-top: 0;
     /* Vnitřní prostor a zarovnání textu */
@@ -555,7 +557,7 @@ body.stranka-koncerty {
     }
     #widgety{
         position: relative;    
-        top: 0px;
+        bottom: 0px;
         padding: 0;
         /* OTAZNÍK 1: Jak zapneš tenhle moderní režim rozvržení? */
         display: flex;
