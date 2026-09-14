@@ -135,7 +135,7 @@ body.stranka-koncerty {
     left: -250px; /* Posune menu zpět na nulovou souřadnici (bude vidět) */
 }
 #bocni-menu img {
-    width: 220px; /* Definuje fixní šířku, můžeš si číslo libovolně upravit */
+    width: 310px; /* Definuje fixní šířku, můžeš si číslo libovolně upravit */
     filter: invert(1);
     display: block; /* Umožní nám s obrázkem lépe manipulovat */
     margin: 0 auto 30px auto; /* Tento trik s 'auto' vycentruje kozu doprostřed menu a přidá pod ní 30px mezeru */
