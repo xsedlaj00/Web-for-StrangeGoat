@@ -619,6 +619,7 @@ text-decoration: dashed;
     .nano-koncerty
     {
         right: 0;
+        opacity: 0;
     }
     #spodni-obsah{
         min-height: 120dvh;
