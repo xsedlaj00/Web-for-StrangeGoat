@@ -190,6 +190,15 @@ body.stranka-koncerty {
     top: 15px; 
     right: 20px;
     z-index: 7;
+    text-decoration: none;
+        color: #008a35;
+
+}
+#jazyk-switch a
+{
+    text-decoration: none;
+    color: #008a35;
+
 }
 
 /* Definice mřížky */
