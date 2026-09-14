@@ -3,7 +3,7 @@
         "id": "StudentFest",
         "datum": "7.května 2026",
         "nazev": "Student Fest",
-        "uvodni_fotka": "P5070523.JPG",
+        "uvodni_fotka": "P5070523.webp",
         "vsechny_fotky": 
         [
             "P5070456.jpg",
@@ -13,6 +13,16 @@
             "P5070523.jpg",
             "P5070523.JPG",
             "P5070541.JPG"
+        ],
+        "fotky_LQ":
+        [
+            "P5070456.webp",
+            "P5070497 (1).webp",
+            "P5070505.webp",
+            "P5070509.webp",
+            "P5070523.webp",
+            "P5070523.webp",
+            "P5070541.webp"
         ]
     }
 ]

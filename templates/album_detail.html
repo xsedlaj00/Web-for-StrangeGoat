@@ -4,7 +4,7 @@
 
     <h1> {{album.nazev}}</h1>    
     <div class="album-detail-mrizka">
-        {% for fotka in album.vsechny_fotky %}
+        {% for fotka in album.fotky_LQ %}
             <a href="/static/{{album.id}}/{{fotka}}" class="detail-fotka-kontejner">
                 <img src = "/static/{{album.id}}/{{fotka}}"> 
             </a>
