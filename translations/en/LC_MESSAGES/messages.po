@@ -58,21 +58,23 @@ msgstr "Welcome to our Oficial Website"
 msgid ""
 "Najdete zde odkazy na naše sociální sítě, plánované koncerty, galerii a "
 "audio."
-msgstr "Here you will find links to our social media, upcoming concerts, gallery, and "
+msgstr ""
+"Here you will find links to our social media, upcoming concerts, gallery, and "
 "audio."
 
 #: templates/index.html:36
 msgid "Bio"
 msgstr "BIO"
 
-#: templates/index.html:37
+#: templates/index.html:40
 msgid ""
-"Jsme tvrďácká (občas i méně tvrďácká) Punk-rocková kapela. Složená z "
-"mladých respektovatelných gentlemanů s cílem ovládnout svět a vymýt "
-"mozky."
-msgstr "We're a badass (and sometimes slightly less badass) punk rock band"
-" made up of young, respectable gentlemen on a mission"
-" to take over the world and brainwash the masses."
+"Jsme tvrďácká (občas i méně tvrďácká) Punk-rocková kapela složená z "
+"mladých respektovatelných gentlemanů. Hrajeme vlastní písničky a rádi si "
+"u vás zahrajeme!"
+msgstr ""
+"We're a badass (and sometimes slightly less badass) punk rock band made up "
+"of young, respectable gentlemen on a mission. We play our own music and "
+"are eager to play for you!"
 
 #: templates/koncerty.html:6
 msgid "VYSTOUPENÍ"
@@ -85,4 +87,3 @@ msgstr "Our music"
 #: templates/pisne.html:9
 msgid "Váš prohlížeč nepodporuje přehrávač zvuku."
 msgstr "Your browser does not support audio playback"
-

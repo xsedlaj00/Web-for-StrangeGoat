@@ -121,20 +121,20 @@
                 
                 // 3. Vypočítej novou výšku: (výška okna MÍNUS to, co jsme odskrolovali)
                 var vypocitanaVyska = vyskaOkna - odskrolovano;
-                if (odskrolovano>320 && window.innerWidth<768)
+                if (odskrolovano > 320 && window.innerWidth < 768)
                 {
                     nano.classList.add("schovano");
                 }
                 else
                 {
-                if (odskrolovano>940){
+                if (odskrolovano > 800){
                     nano.classList.add("schovano");
                     
                 }
                 else 
                     nano.classList.remove("schovano");
                 }
-                if (odskrolovano>500 && window.innerWidth>768&&!otvorene_menu){
+                if (odskrolovano > 500 && window.innerWidth > 768 && !otvorene_menu){
                                                     // Najdeme prvek menu podle jeho ID
                     var menu = document.getElementById("bocni-menu");
                     

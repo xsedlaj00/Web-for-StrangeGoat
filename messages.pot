@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-09-13 14:40+0200\n"
+"POT-Creation-Date: 2026-09-14 21:18+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -49,25 +49,25 @@ msgstr ""
 msgid "Pozvěte si nás. :)"
 msgstr ""
 
-#: templates/index.html:29
+#: templates/index.html:35
 msgid "Vítejte na oficiálním webu naší kapely!"
 msgstr ""
 
-#: templates/index.html:30
+#: templates/index.html:36
 msgid ""
 "Najdete zde odkazy na naše sociální sítě, plánované koncerty, galerii a "
 "audio."
 msgstr ""
 
-#: templates/index.html:36
+#: templates/index.html:38
 msgid "Bio"
 msgstr ""
 
-#: templates/index.html:37
+#: templates/index.html:40
 msgid ""
-"Jsme tvrďácká (občas i méně tvrďácká) Punk-rocková kapela. Složená z "
-"mladých respektovatelných gentlemanů s cílem ovládnout svět a vymýt "
-"mozky."
+"Jsme tvrďácká (občas i méně tvrďácká) Punk-rocková kapela složená z "
+"mladých respektovatelných gentlemanů. Hrajeme vlastní písničky a rádi si "
+"u vás zahrajeme!"
 msgstr ""
 
 #: templates/koncerty.html:6
