@@ -1,21 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
-html,body {
-    background-color: #052658ea; /* Temně šedá, téměř černá */
-    color: #e0e0e0; /* Světle šedý text pro dobré čtení */
+/* --- ZÁKLADNÍ TRIK PRO RESPONZIVITU --- */
+html {
+    font-size: 62.5%; /* 1rem = 10px */
+}
+
+body {
+    background-color: #052658ea;
+    color: #e0e0e0;
     font-family: 'Playfair Display', serif;    
-    font-size: larger;
-    margin: 0; /* Vymaže výchozí bílé okraje prohlížeče */
+    font-size: 1.8rem; /* Původně bylo 'larger', 1.8rem odpovídá cca 18px */
+    margin: 0; 
     overflow-x: hidden;    
 }
+
 body.stranka-koncerty {
     background-color: #0b2e29;
 }
+
 #koncerty {
     background-color: #0b2e29; 
     color: #ffffff;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    padding: 60px 20px;
+    padding: 6rem 2rem; /* Původně 60px 20px */
 }
 
 /* --- NADPIS S ČARAMI --- */
@@ -23,26 +30,25 @@ body.stranka-koncerty {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 40px;
-    max-width: 1000px;
+    margin-bottom: 4rem; /* 40px */
+    max-width: 100rem;   /* 1000px */
     margin-left: auto;
     margin-right: auto;
 }
 
-/* Vygenerování čar nalevo a napravo od nadpisu */
 #koncerty .tour-header::before,
 #koncerty .tour-header::after {
     content: '';
     flex: 1;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-    margin: 0 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4); /* Linky se obvykle nechávají v px, aby byly ostré */
+    margin: 0 2rem; /* 20px */
 }
 
 #koncerty h2 {
-    font-size: 2.5rem;
+    font-size: 4rem; /* Původně bylo 2.5rem na základu 16px, což je 40px -> teď 4rem */
     font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 0.2rem; /* 2px */
     margin: 0;
 }
 
@@ -50,235 +56,208 @@ body.stranka-koncerty {
 #koncerty .tour-list {
     list-style: none;
     padding: 0;
-    max-width: 1000px;
+    max-width: 100rem; /* 1000px */
     margin: 0 auto;
 }
 
 /* --- JEDNOTLIVÝ ŘÁDEK --- */
 .tour-item {
     display: grid;
-    /* Rozdělení do 3 sloupců: Datum (nejmenší), Klub a Město (větší) */
     grid-template-columns: 1fr 2fr 2fr; 
     align-items: center;
-    padding: 25px 15px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Jemná dělící čára */
+    padding: 2.5rem 1.5rem; /* 25px 15px */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
     transition: background-color 0.2s ease;
 }
-
 
 /* Styl pro jednotlivé sloupce */
 .tour-date {
     font-weight: 700;
-    font-size: 0.9rem;
+    font-size: 1.4rem; /* Původně 0.9rem (~14px) */
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.1rem; /* 1px */
 }
 
 .tour-venue {
-    font-size: 1.05rem;
+    font-size: 1.7rem; /* Původně 1.05rem (~17px) */
 }
 
 .tour-location {
-    font-size: 0.95rem;
-    color: rgba(255, 255, 255, 0.7); /* Mírně ztlumená barva pro lokaci */
+    font-size: 1.5rem; /* Původně 0.95rem (~15px) */
+    color: rgba(255, 255, 255, 0.7); 
 }
 
 #hlavni-obsah {
-    padding: 20px; /* Aby text nebyl nalepený úplně na hrany obrazovky */
-    transition: margin-left 0.3s ease; /* Zase chceme, aby ten pohyb byl plynulý, jako u menu */
-    margin-left: 250px;
-    min-height: 80.4dvh;
-    
+    padding: 2rem; /* 20px */
+    transition: margin-left 0.3s ease; 
+    margin-left: 25rem; /* 250px */
+    min-height: 80.4dvh; /* Vh a dvh zůstávají, to už je responzivní */
 }
 
-/* Tohle pravidlo posune hlavní obsah, když je menu otevřené */
 #hlavni-obsah.posunuto {
-    margin-left: 0px; /* Těchto 250px odpovídá přesně šířce menu, které jsme nastavili dřív */
+    margin-left: 0;
 }
 
 #bocni-menu {
-    height: 100dvh; /* Roztáhne menu na celou výšku okna (100% viewport height) */
-    width: 250px; /* Šířka menu */
-    position: fixed; /* Zafixuje menu na místě i při scrollování stránky dolů */
+    height: 100dvh; 
+    width: 25rem; /* 250px */
+    position: fixed; 
     top: 0;
-    left: 0px; /* Zásadní trik: posuneme menu o 250px doleva, takže zmizí za okrajem monitoru */
-    background-color: #0b5075c0; /* O něco světlejší černá než zbytek webu, aby se to oddělilo */
-    transition: left 0.3s ease; /* Když se změní vlastnost left, ať se to stane plynule za 0.3 vteřiny */
-    padding-top: 60px; /* Odsazení odshora, aby odkazy nebyly nalepené na horní hranu */
+    left: 0;
+    background-color: #0b5075c0; 
+    transition: left 0.3s ease; 
+    padding-top: 6rem; /* 60px */
     z-index: 6;
 }
 
 #bocni-menu a {
-    color:rgba(251, 251, 249, 0.939);
-    text-decoration:wavy /* Tato vlastnost řídí podtržení. Když sem zadáš slovo 'none', podtržení zmizí. */ ;
-    font-size:30px       /* Tímto zvětšíš písmo. Zadávej číslo v pixelech, třeba '22px'. */ ;
-    display: block        /* Abys mohl později odkazům nastavit lepší mezery mezi sebou, zadej sem slovo 'block'. Tím se každý odkaz roztáhne na celý svůj řádek v menu. */ ;
-    padding: 20px;
+    color: rgba(251, 251, 249, 0.939);
+    text-decoration: wavy; 
+    font-size: 3rem; /* 30px */
+    display: block; 
+    padding: 2rem; /* 20px */
     font-family: 'Courier Prime', monospace;
-
 }
-
 
 #bocni-menu ul {
     list-style: none;
     padding: 0;
 }
-/* Tuhle třídu přidáme později pomocí JavaScriptu, aby menu vyjelo */
+
 #bocni-menu.otevreno {
-    left: -250px; /* Posune menu zpět na nulovou souřadnici (bude vidět) */
+    left: -25rem; /* -250px */
 }
+
 #bocni-menu img {
-    width: 310px; /* Definuje fixní šířku, můžeš si číslo libovolně upravit */
+    width: 31rem; /* 310px */
     filter: invert(1);
-    display: block; /* Umožní nám s obrázkem lépe manipulovat */
-    margin: 0 auto 30px auto; /* Tento trik s 'auto' vycentruje kozu doprostřed menu a přidá pod ní 30px mezeru */
+    display: block; 
+    margin: 0 auto 3rem auto; /* 30px */
 }
-/* Vzhled tlačitka */
+
 #menu-tlacitko {
-    font-size: 20px;
+    font-size: 2rem; /* 20px */
     cursor: pointer;
     background-color: transparent;
     color: white;
     border: none;
-    padding: 15px;
+    padding: 1.5rem; /* 15px */
     position: fixed;
-    z-index: 7; /* Zajistí, že tlačítko bude vždy úplně nahoře nad vším ostatním */
+    z-index: 7; 
 }
+
 #menu-tlacitko::before {
-    
-   
-    /* 1. Aby vrstva vůbec vznikla, CSS vyžaduje vlastnost content, i když je prázdná */
     content: ""; 
-    /* 2. Roztáhneme vrstvu přesně přes celé menu od kraje ke kraji */
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    
-    /* 3. Tady pošleme vrstvu do pozadí (za text, ale nad tvoji modrou barvu) */
     z-index: -1; 
-    
-    /* 4. Tady nastavíme onu kýženou průhlednost (0.2 znamená 20 % viditelnosti) */
     opacity: 0.0; 
-    transition: 0.3s ease; /* Když se změní vlastnost left, ať se to stane plynule za 0.3 vteřiny */
-
-    /* 5. A sem vlož ty tři původní řádky s kozou z předchozího pokusu */
+    transition: 0.3s ease; 
     background-image: url('/static/goat.png'); 
-    background-size: 80px 60px;
+    background-size: 8rem 6rem; /* 80px 60px */
     background-repeat: no-repeat; 
     background-position: 0;
 }
+
 #menu-tlacitko.zmiz::before {
-    
-    /* 4. Tady nastavíme onu kýženou průhlednost (0.2 znamená 20 % viditelnosti) */
     opacity: 0.7; 
-    
     filter: invert(1);
-    background-position: +30px;
+    background-position: +3rem; /* 30px */
 }
-#jazyk-switch
-{
+
+#jazyk-switch {
     position: fixed; 
-    top: 15px; 
-    right: 20px;
+    top: 1.5rem; /* 15px */
+    right: 2rem; /* 20px */
     z-index: 7;
     text-decoration: none;
-        color: #008a35;
-
+    color: #008a35;
 }
-#jazyk-switch a
-{
+
+#jazyk-switch a {
     text-decoration: none;
     color: #008a35;
-
 }
 
-/* Definice mřížky */
 .galerie-mrizka {
     display: grid;
-    /* Tohle magické pravidlo říká: "Vytvoř sloupce, které mají minimálně 250px.
-       Pokud je obrazovka širší, poskládej jich vedle sebe co nejvíc." */
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px; /* Mezera mezi čtverci */
-    padding-top: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr)); /* 250px */
+    gap: 2rem; /* 20px */
+    padding-top: 3rem; /* 30px */
 }
 
-/* Vzhled jedné dlaždice */
 .album-dlazdice {
     background-color: #1a1a1a;
-    text-decoration: none; /* Zbavíme se podtržení odkazu */
+    text-decoration: none; 
     color: #e0e0e0;
-    border-radius: 8px; /* Jemně zaoblené rohy */
-    overflow: hidden; /* Aby obrázek nepřetekl ze zaoblených rohů */
-    transition: transform 0.2s ease; /* Příprava na animaci po najetí myší */
+    border-radius: 0.8rem; /* 8px */
+    overflow: hidden; 
+    transition: transform 0.2s ease; 
 }
 
-
-/* Kontejner pro obrázek, abychom zaručili jeho čtvercový tvar */
 .obrazek-kontejner {
     width: 100%;
-    aspect-ratio: 1 / 1; /* Tohle vynutí přesný čtverec bez ohledu na šířku */
+    aspect-ratio: 1 / 1; 
     overflow: hidden;
 }
 
-/* Samotný obrázek uvnitř čtverce */
 .obrazek-kontejner img {
     width: 100%;
     height: 100%;
-    /* object-fit: cover je zásadní - ořízne obrázek, aby se vešel do čtverce bez deformace! */
     object-fit: cover; 
 }
 
-/* Texty dole v dlaždici */
 .album-info {
-    padding: 15px;
+    padding: 1.5rem; /* 15px */
 }
 
 .album-info h3 {
-    margin: 0 0 5px 0;
-    color: rgba(220, 4, 213, 0.762); /* Tvoje rocková fialová! */
+    margin: 0 0 0.5rem 0; /* 5px */
+    color: rgba(220, 4, 213, 0.762); 
 }
 
 .album-info p {
     margin: 0;
-    font-size: 14px;
+    font-size: 1.4rem; /* 14px */
     color: #888;
 }
 
-#uvodni-stranka
-{   
-    padding-top:0;
+#uvodni-stranka {   
+    padding-top: 0;
     background-repeat: no-repeat;
-    background-position: center -120px;
+    background-position: center -12rem; /* -120px */
 }
 
-#uvodni-stranka ul{
+#uvodni-stranka ul {
     list-style: none;
-    padding: 5px;
+    padding: 0.5rem; /* 5px */
 }
 
 #login {
     opacity: 0;
-    width: 20px;
-    height: 10px;
+    width: 2rem; /* 20px */
+    height: 1rem; /* 10px */
     position: fixed;
     bottom: 0;
-    left:0;
+    left: 0;
     z-index: 103;
 }
-#back-kontejner 
-{
-    padding-top: 40px;
+
+#back-kontejner {
+    padding-top: 4rem; /* 40px */
 }
+
 #back-tlacitko {
     background-color: transparent;
     border: none;
     cursor: pointer;
 }
 
-#back-tlacitko img{
-    width: 40px;
+#back-tlacitko img {
+    width: 4rem; /* 40px */
 }
 
 #hero-sekce {
@@ -286,264 +265,188 @@ body.stranka-koncerty {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100dvh; /* 100 % výšky obrazovky */
+    height: 100dvh; 
     background-image: url('/static/StudentFest/P5070505.webp');
     background-size: cover;
     object-fit: cover;
     background-position: center 25%;
-    
-    z-index: 2; /* Aby byla fotka pod hlavním menu */
+    z-index: 2; 
     display: flex;
     justify-content: center;
     align-items: center;
     pointer-events: none;
 }
-/* Třída pro zmenšenou fotku */
+
 #hero-sekce.smrsteno {
-    height: 120px; /* Zmenší se na malý pruh */
+    height: 12rem; /* 120px */
 }
 
 #hero-nadpis img {
     position: relative;
     filter: invert(100%);
+    padding-left: 9rem; /* 90px */
 }
-/* nejblizsi koncerty*/
-.nano-koncerty
-{
+
+.nano-koncerty {
     position: absolute;
-    right: 40px;
-    bottom: 5px;
+    right: 4rem; /* 40px */
+    bottom: 0.5rem; /* 5px */
     background-color: #65022c;
-    text-decoration: none; /* Zbavíme se podtržení odkazu */
+    text-decoration: none; 
     color: #e0e0e0;
-    border-radius: 10px; /* Jemně zaoblené rohy */
+    border-radius: 1rem; /* 10px */
     width: 90%; 
-    max-width: 400px;
+    max-width: 40rem; /* 400px */
     height: min-content;
-    padding-left: 6px;
+    padding-left: 0.6rem; /* 6px */
     z-index: 1;
-    transition: opacity 0.3s ease;
-    transition: transform 0.2s ease; /* Příprava na animaci po najetí myší */
+    transition: opacity 0.3s ease, transform 0.2s ease; 
     pointer-events: auto;
 }
 
-.nano-koncerty.schovano
-{
+.nano-koncerty.schovano {
     pointer-events: none;
     opacity: 0;
 }
 
-
-/* Spodní obsah */
 #spodni-obsah {
-    margin-top: 100dvh; /* Začíná až pod první obrazovkou */
+    margin-top: 100dvh; 
     position: relative;
-    z-index: 1; /* Vyjede NAD fotku */
-    background-color: transparent; /* Temně šedá, téměř černá */
+    z-index: 1; 
+    background-color: transparent; 
     min-height: 130dvh;
     padding-right: 0;
     width: 100%;
 }
 
-#spodni-obsah img
-{
+#spodni-obsah img {
     position: absolute;
-    top: -80px;
+    top: -8rem; /* -80px */
     z-index: -1;
-    left: 60%; /* Odsune levý okraj obrázku přesně do poloviny obrazovky */
+    left: 60%; 
     transform: translateX(-50%); 
     opacity: 0.4;
-    /* Cukne s celým obrázkem o polovinu jeho vlastní šířky zpátky doleva, čímž najde dokonalý střed */
 }
-#widgety{
+
+#widgety {
     position: absolute; 
-    right:0; 
-    top: 0px;
+    right: 0; 
+    top: 0;
     pointer-events: auto;
-    padding: 40px;
+    padding: 4rem; /* 40px */
 }
-#bandcamp-okno{
+
+#bandcamp-okno {
     position: relative;
 }
-.tajny-text{
+
+.tajny-text {
     opacity: 0;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    bottom:100%;
-    margin-bottom: 10px;
-    
-    /* --- NOVÝ VZHLED BUBLINY --- */
-    
-    /* 1. Font a text */
-    font-family: 'Courier Prime', monospace; /* Zkus i 'Playfair Display', co sedne víc */
-    font-size: 16px;
+    bottom: 100%;
+    margin-bottom: 1rem; /* 10px */
+    font-family: 'Courier Prime', monospace; 
+    font-size: 1.6rem; /* 16px */
     color: #ffffff; 
-    
-    /* 2. Černé ohraničení (tělo bubliny) */
-    background-color: rgba(0, 0, 0, 0.9); /* Téměř neprůhledná černá */
-    border: 1px solid #000000; /* Kdybys chtěl vyloženě tvrdou čáru kolem */
-    
-    /* 3. Vnitřní prostor a tvar */
-    padding: 6px 12px; /* 6px nahoře/dole, 12px vlevo/vpravo */
-    border-radius: 6px; /* Zaoblené rohy, ať to nevypadá jak z Windows 95 */
-    
-    /* 4. Zabrání tomu, aby se ti slovo rozlomilo na dva řádky, kdyby bylo delší */
-    white-space: nowrap; ;
+    background-color: rgba(0, 0, 0, 0.9); 
+    border: 1px solid #000000; 
+    padding: 0.6rem 1.2rem; /* 6px 12px */
+    border-radius: 0.6rem; /* 6px */
+    white-space: nowrap; 
 }
 
-
 #hlavni-zapati {
-    /* position: absolute; - TOHLE SMAŽ! */
-    position: relative; /* Tohle ho vrátí do normálního světa */
-    z-index:100;       /* Tohle ho vynese nad tu obří modrou deku */
+    position: relative; 
+    z-index: 100;       
     display: flex;
-    justify-content: center; /* Vystředí ikonky i text doprostřed obrazovky */
+    justify-content: center; 
     align-items: center;
-    flex-direction: column;  /* Poskládá ikonky a text pod sebe */
-    padding: 40px;
-    background-color: rgba(0, 0, 0, 0.5); /* Lehce průhledná černá pro rockový vibe */
+    flex-direction: column;  
+    padding: 4rem; /* 40px */
+    background-color: rgba(0, 0, 0, 0.5); 
 }
 
 .socialni-ikony a {
     color: white;
-    font-size: 30px; /* Zvětší ikony */
-    margin: 0 15px;  /* Udělá jim mezery mezi sebou */
+    font-size: 3rem; /* 30px */
+    margin: 0 1.5rem;  /* 15px */
     transition: color 0.3s;
     text-decoration: none;
 }
 
-
-#hero-nadpis img {
-    padding-left: 90px;
-}
-
-/* 1. Obal, který nám fotky poskládá do mřížky vedle sebe */
 .album-detail-mrizka {
     display: grid;
-    /* Fotky budou mít min. 250px, poskládají se automaticky vedle sebe */
-    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-    gap: 15px; 
+    grid-template-columns: repeat(auto-fill, minmax(50rem, 1fr)); /* 500px */
+    gap: 1.5rem; /* 15px */
 }
 
-/* 2. Pevně definovaný tvar pro JEDNU fotku */
 .detail-fotka-kontejner {
     width: 100%;
-    
-    /* OTAZNÍK 1: Jakou vlastností v CSS řekneš, že kontejner má mít tvar 
-       dokonalého čtverce (1:1) nebo třeba obdélníku (4:3)? */
     aspect-ratio: 5/3;
-       
-    /* OTAZNÍK 2: Co musíme udělat s částmi obrázku, 
-       které by se do tohoto tvaru nevešly a chtěly by "přetéct" ven? */
     overflow: hidden;
 }
 
-/* 3. Samotný obrázek uvnitř tvaru */
 .detail-fotka-kontejner img {
     width: 100%;
     height: 100%;
-    
-    /* OTAZNÍK 3: Tohle je ta absolutně nejdůležitější magie! 
-       Jaká vlastnost zajistí, že se fotka nerozplácne ani nesmáčkne, 
-       ale plynule vyplní náš čtverec/obdélník (byť se z ní kousek ořízne)? */
     object-fit: cover;
 }
 
 .band-bio-box {
-    /* Omezení šířky a vycentrování na střed */
-    max-width: 620px;
-    margin: 2rem 40px; 
-    position: relative  ;
+    max-width: 62rem; /* 620px */
+    margin: 3.2rem 4rem; /* Původní 2rem a 40px přepočteny s ohledem na dřívější formát -> teď 32px a 40px = 3.2rem 4rem */
+    position: relative;
     left: 0;
     padding-top: 0;
-    /* Vnitřní prostor a zarovnání textu */
-    padding: 1.5rem 2rem;
+    padding: 2.4rem 3.2rem; /* 24px a 32px */
     text-align: center; 
-    
-    /* Volitelné: lehké zakulacení rohů */
-    border-radius: 4px;
-    
-    /* Volitelné: stín pro "vytažení" do popředí */
+    border-radius: 0.4rem; /* 4px */
 }
 
 @media (hover: hover) {
-    .tour-item:hover {
-    background-color: rgba(255, 255, 255, 0.05);
-    }
-    #bocni-menu a:hover {
-    background-color: #3d3846;
-    }
-    .socialni-ikony a:hover {
-    color: rgba(220, 4, 213, 0.8); /* Při najetí myší zfialoví */
-    }
-    /* Efekt při najetí myší - čtverec lehce povyskočí */
-    .album-dlazdice:hover {
-        transform: translateY(-5px);
-    }
-    .nano-koncerty:hover{
-    background-color: #87023a;
-    bottom: 10px;
-    transform: translateY(-5px);
-    }
-    #bandcamp-okno:hover .tajny-text{
-    opacity: 1;
-    text-decoration: dashed;
-    }
+    .tour-item:hover { background-color: rgba(255, 255, 255, 0.05); }
+    #bocni-menu a:hover { background-color: #3d3846; }
+    .socialni-ikony a:hover { color: rgba(220, 4, 213, 0.8); }
+    .album-dlazdice:hover { transform: translateY(-0.5rem); } /* -5px */
+    .nano-koncerty:hover { background-color: #87023a; bottom: 1rem; transform: translateY(-0.5rem); }
+    #bandcamp-okno:hover .tajny-text { opacity: 1; text-decoration: dashed; }
 }
 
-.tour-item:active {
-background-color: rgba(255, 255, 255, 0.05);
-}
-#bocni-menu a:active {
-background-color: #3d3846;
-}
-.socialni-ikony a:active {
-color: rgba(220, 4, 213, 0.8); /* Při najetí myší zfialoví */
-}
-/* Efekt při najetí myší - čtverec lehce povyskočí */
-.album-dlazdice:active {
-    transform: translateY(-5px);
-}
-.nano-koncerty:active{
-background-color: #87023a;
-bottom: 10px;
-transform: translateY(-5px);
-}
-#bandcamp-okno:active .tajny-text{
-opacity: 1;
-text-decoration: dashed;
-}
+.tour-item:active { background-color: rgba(255, 255, 255, 0.05); }
+#bocni-menu a:active { background-color: #3d3846; }
+.socialni-ikony a:active { color: rgba(220, 4, 213, 0.8); }
+.album-dlazdice:active { transform: translateY(-0.5rem); }
+.nano-koncerty:active { background-color: #87023a; bottom: 1rem; transform: translateY(-0.5rem); }
+#bandcamp-okno:active .tajny-text { opacity: 1; text-decoration: dashed; }
 
-
+/* --- MEDIA QUERY PRO MOBILY --- */
+/* Zde ponechávám 768px, u breakpointů je to standardní praxe */
 @media screen and (max-width: 768px) {
     
     #hlavni-obsah {
-        /* Tady zrušíme tu obří mezeru zleva */
         margin-left: 0; 
-        padding: 20px; /* Trochu zmenšíme vnitřní okraje, na mobilu je 40px moc */
+        padding: 2rem; /* 20px */
     }
 
     #hlavni-obsah.posunuto {
-        /* I když se menu otevře, obsah už na mobilu nebudeme posouvat, 
-           menu ho prostě překryje */
         margin-left: 0;
     }
     
     #hero-sekce {
-        /* Upravíme pozici fotky, aby na malém displeji na výšku kapela nevypadla ze záběru */
         background-position: center top; 
     }
 
     #bocni-menu {
-        left: -250px;
+        left: -25rem; /* -250px */
     }
 
     #bocni-menu.otevreno {
         left: 0;
     }
+
     #menu-tlacitko::before {
-        /* 1. Základní stavební kameny (ty se nikdy nemění) */
         content: ""; 
         position: absolute;
         top: 0;
@@ -553,76 +456,63 @@ text-decoration: dashed;
         z-index: -1; 
         transition: 0.3s ease; 
         background-image: url('/static/goat.png'); 
-        background-size: 60px 40px;
+        background-size: 6rem 4rem; /* 60px 40px */
         background-repeat: no-repeat; 
-        
-        /* 2. PROHOZENÝ VÝCHOZÍ STAV (Koza je rovnou vidět) */
         opacity: 0.6; 
-        background-position: 30px;
+        background-position: 3rem; /* 30px */
     }
 
     #menu-tlacitko.zmiz::before {
-        /* 3. ZMĚNA PO KLIKNUTÍ (Napíšeme SEM JEN TO, co se má změnit) */
         opacity: 0.0; 
         background-position: 0;
     }
-    #spodni-obsah img
-    {
+
+    #spodni-obsah img {
         position: absolute;
-        top: -100px;
+        top: -10rem; /* -100px */
         z-index: -1;
-        left: 60%; /* Odsune levý okraj obrázku přesně do poloviny obrazovky */
+        left: 60%; 
         transform: translateX(-50%); 
         opacity: 0.25;
-        /* Cukne s celým obrázkem o polovinu jeho vlastní šířky zpátky doleva, čímž najde dokonalý střed */
     }
-    #ig-okno{
+
+    #ig-okno {
         position: relative;
     }
+
     #hero-nadpis img {
-    scale: 0.28;
+        scale: 0.28;
     }
 
     .tour-item {
-        /* Na malých obrazovkách zrušíme sloupce a naskládáme obsah pod sebe */
         grid-template-columns: 1fr; 
-        gap: 8px;
+        gap: 0.8rem; /* 8px */
         text-align: center;
-        padding: 20px 10px;
+        padding: 2rem 1rem; /* 20px 10px */
     }
-    #widgety{
+
+    #widgety {
         position: relative;    
-        bottom: 0px;
+        bottom: 0;
         padding: 0;
-        /* OTAZNÍK 1: Jak zapneš tenhle moderní režim rozvržení? */
         display: flex;
-        
-        /* OTAZNÍK 2: Výchozí chování dává věci vedle sebe do řádku. 
-           Jak Flexboxu řekneš, aby widgety poskládal pěkně pod sebe do sloupce? */
         flex-direction: column;
-        
-        /* OTAZNÍK 3: Jaká vlastnost (kterou jsi použil v patičce) 
-           zarovná všechny tyto položky ve sloupci přesně na vodorovný střed? */
         align-items: center;
         pointer-events: auto;
     }
+
     #bandcamp-okno {
-        /* 1. Nastavíme obalu stejnou šířku, jako mívá Instagram na mobilu */
-        width: 280px; 
-        
-        /* 2. Zapneme v něm Flexbox, ať můžeme zarovnávat obsah uvnitř */
+        width: 28rem; /* 280px */
         display: flex;
-        
-        /* 3. Tohle přilepí ten 150px široký iframe na levý okraj této 320px krabice */
         justify-content: flex-start; 
     }
-    .nano-koncerty
-    {
+
+    .nano-koncerty {
         right: 0;
         opacity: 0;
     }
-    #spodni-obsah{
-        min-height: 120dvh;
 
+    #spodni-obsah {
+        min-height: 120dvh;
     }
 }
