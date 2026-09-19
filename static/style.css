@@ -88,10 +88,10 @@ body.stranka-koncerty {
 }
 
 #hlavni-obsah {
-    padding: 2rem; /* 20px */
+    padding: 2rem;
     transition: margin-left 0.3s ease; 
     margin-left: 25rem; /* 250px */
-    min-height: 80.4dvh; /* Vh a dvh zůstávají, to už je responzivní */
+    min-height: 80.9dvh; /* Vh a dvh zůstávají, to už je responzivní */
 }
 
 #hlavni-obsah.posunuto {
@@ -249,6 +249,8 @@ body.stranka-koncerty {
 #back-kontejner {
     position: relative;
     padding-top: 4rem; /* 40px */
+    padding-bottom: 0rem;
+    padding-left: 2rem;
     z-index: 6;
 }
 
@@ -257,7 +259,10 @@ body.stranka-koncerty {
     background-color: transparent;
     border: none;
     cursor: pointer;
-    size: 80px;
+    width: 5rem; 
+    height: 5rem;
+    overflow: hidden;
+    display: flex; justify-content: center; align-items: center;
 }
 
 #back-tlacitko img {
