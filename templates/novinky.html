@@ -12,7 +12,13 @@
             {% for new in novinky_do_html %}
                 <li class="single_new">
                     <div class="new-date">{{ new.datum }}</div>
-                    <div class="sazying">{{ new.sdeleni }}</div>
+                    {% if session.get('jazyk') == 'en' %}
+                        <!-- Zobrazí se jen, pokud je zapnutá angličtina -->
+                        <div class="saying">{{ new.sdeleni_en }}</div>
+                    {% else %}
+                        <!-- Zobrazí se pro češtinu nebo jako výchozí stav -->
+                        <div class="saying">{{ new.sdeleni }}</div>
+                    {% endif %}
                 </li>
             {% endfor %}
         </ul>
