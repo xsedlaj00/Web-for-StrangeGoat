@@ -3,7 +3,20 @@
 {% block obsah %}
 
     
-
+    <section id="noviny">
+        <div class="news_header">
+            <h2>{{_('Novinky')}}</h2>
+        </div>
+        
+        <ul class="news_place">
+            {% for new in novinky_do_html %}
+                <li class="single_new">
+                    <div class="new-date">{{ new.datum }}</div>
+                    <div class="sazying">{{ new.sdeleni }}</div>
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
 
 
 

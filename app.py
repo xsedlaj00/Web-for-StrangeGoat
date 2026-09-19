@@ -60,6 +60,11 @@ def galerie():
         alba=json.load(f)
     return render_template('galerie.html',alba_do_html=alba)
 
+@app.route('/novinky')
+def novinky():
+    with open('novinky.json','r',encoding='utf-8') as f:
+        novi=json.load(f)
+    return render_template('novinky.html', novinky_do_html=novi)
 
 # Ty špičaté závorky <id_alba> říkají Flasku, že cokoliv uživatel zadá za /galerie/,
 # má vzít a vložit to do proměnné id_alba
