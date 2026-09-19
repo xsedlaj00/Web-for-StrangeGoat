@@ -1,8 +1,8 @@
 from flask import Flask, render_template, request, session, redirect
 from flask_babel import Babel
+import datetime
 import json
 import os
-import datetime
 from dotenv import load_dotenv
 
 # Tohle řekne Pythonu: "Najdi soubor .env a načti z něj všechna tajná data"
@@ -31,7 +31,14 @@ def zmenit_jazyk(jazyk):
 def home():
     with open('koncerty.json', 'r', encoding='utf-8') as f:
         seznamkoncertu = json.load(f)
-    return render_template('index.html',koncerty_do_html=seznamkoncertu)
+
+    dnes = datetime.datetime.now().date()
+    aktualni_koncerty = []
+    for koncert in seznamkoncertu:
+        datum_koncertu=datetime.datetime.strptime(koncert['datum'],"%d.%m.%Y").date()
+        if datum_koncertu>=dnes :
+            aktualni_koncerty.append(koncert)
+    return render_template('index.html',koncerty_do_html=aktualni_koncerty)
 
 # Cesta 2: Koncerty (koncerty.html)
 @app.route('/koncerty')
@@ -90,6 +97,8 @@ def spravce():
     else:
         # Zobrazení přihlašovacího formuláře (stránka, kterou už máš hotovou)
         return render_template('spravce.html')
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)

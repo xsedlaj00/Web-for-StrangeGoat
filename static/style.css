@@ -247,13 +247,18 @@ body.stranka-koncerty {
 }
 
 #back-kontejner {
+    position: relative;
     padding-top: 4rem; /* 40px */
+    z-index: 6;
 }
 
 #back-tlacitko {
+    position: relative;
     background-color: transparent;
     border: none;
     cursor: pointer;
+    z-index: 6;
+
 }
 
 #back-tlacitko img {
