@@ -257,10 +257,11 @@ body.stranka-koncerty {
     background-color: transparent;
     border: none;
     cursor: pointer;
+    size: 80px;
 }
 
 #back-tlacitko img {
-    width: 4rem; /* 40px */
+    width: 8rem; /* 40px */
 }
 
 #hero-sekce {
