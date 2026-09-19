@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-09-13 14:40+0200\n"
-"PO-Revision-Date: 2026-09-13 14:41+0200\n"
+"POT-Creation-Date: 2026-09-19 14:04+0200\n"
+"PO-Revision-Date: 2026-09-19 14:05+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
 "Language-Team: en <LL@li.org>\n"
@@ -34,6 +34,10 @@ msgstr "Music"
 msgid "Galerie"
 msgstr "Gallery"
 
+#: templates/base.html:28 templates/novinky.html:8
+msgid "Novinky"
+msgstr "News"
+
 #: templates/galerie.html:3
 msgid "Zde fotky"
 msgstr "Photos in here"
@@ -50,11 +54,11 @@ msgstr "We do not have any concerts planned currently"
 msgid "Pozvěte si nás. :)"
 msgstr "Invite us somewhere. :)"
 
-#: templates/index.html:29
+#: templates/index.html:35
 msgid "Vítejte na oficiálním webu naší kapely!"
 msgstr "Welcome to our Oficial Website"
 
-#: templates/index.html:30
+#: templates/index.html:36
 msgid ""
 "Najdete zde odkazy na naše sociální sítě, plánované koncerty, galerii a "
 "audio."
@@ -62,7 +66,7 @@ msgstr ""
 "Here you will find links to our social media, upcoming concerts, gallery, and "
 "audio."
 
-#: templates/index.html:36
+#: templates/index.html:38
 msgid "Bio"
 msgstr "BIO"
 

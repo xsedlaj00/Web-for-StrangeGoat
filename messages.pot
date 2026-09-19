@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-09-14 21:18+0200\n"
+"POT-Creation-Date: 2026-09-19 14:04+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,6 +31,10 @@ msgstr ""
 
 #: templates/base.html:27
 msgid "Galerie"
+msgstr ""
+
+#: templates/base.html:28 templates/novinky.html:8
+msgid "Novinky"
 msgstr ""
 
 #: templates/galerie.html:3
