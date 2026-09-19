@@ -61,12 +61,20 @@
         let aktualniScale = 1;
         let cilovaScale = 1;
 
+        // 1. Změříme okno jen na začátku a uložíme to do proměnné
+        let jeMobil = window.innerWidth <= 768;
+
+        // (Volitelné) Pokud někdo otočí telefon na šířku, přeměříme to
+        window.addEventListener("resize", function() {
+            jeMobil = window.innerWidth <= 768;
+        });
+
         // 1. Záchytník scrollu - jen aktualizuje cíl, kam chceme dojet
         window.addEventListener("scroll", function() {
             var odskrolovano = window.scrollY;
             var skale = 1 - (odskrolovano / 500);
             
-            if (window.innerWidth > 768) {
+            if (jeMobil) {
                 cilovaScale = Math.max(0.2, skale);
             } else {
                 cilovaScale = Math.max(0.5, skale);

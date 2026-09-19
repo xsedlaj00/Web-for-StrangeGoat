@@ -280,6 +280,8 @@ body.stranka-koncerty {
     justify-content: center;
     align-items: center;
     pointer-events: none;
+    transform: translateZ(0);
+
 }
 
 #hero-sekce.smrsteno {
