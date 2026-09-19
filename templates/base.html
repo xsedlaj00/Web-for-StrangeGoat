@@ -50,11 +50,11 @@
             // Najdeme prvek menu podle jeho ID
             otvorene_menu = true;
             var menu = document.getElementById("bocni-menu");
-            
+            var sipka_back = document.getElementById("back-tlacitko");
             // Funkce toggle() buď přidá, nebo odebere třídu "otevreno".
             // Tím se aplikuje to pravidlo left: 0; z CSS.
             menu.classList.toggle("otevreno");
-            
+            sipka_back.classList.toggle("schovano");
             // 2. Najdeme hlavní obsah a posuneme/vrátíme ho (nová část)
             var obsah = document.getElementById("hlavni-obsah");
             obsah.classList.toggle("posunuto");

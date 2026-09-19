@@ -257,8 +257,6 @@ body.stranka-koncerty {
     background-color: transparent;
     border: none;
     cursor: pointer;
-    z-index: 6;
-
 }
 
 #back-tlacitko img {
@@ -522,5 +520,8 @@ body.stranka-koncerty {
 
     #spodni-obsah {
         min-height: 120dvh;
+    }
+    #back-tlacitko.schovano{
+        opacity: 0;
     }
 }
