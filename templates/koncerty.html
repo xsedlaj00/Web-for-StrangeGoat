@@ -8,12 +8,21 @@
         
         <ul class="tour-list">
             {% for koncert in koncerty_do_html %}
-                <li class="tour-item">
-                    <div class="tour-date">{{ koncert.datum }}</div>
-                    <div class="tour-venue">{{ koncert.misto }}</div>
-                    
-                    <div class="tour-location">{{ koncert.mesto }}</div>
-                </li>
+                {% if koncert is not none %}
+                                    
+                    <li class="tour-item">
+                        <div class="tour-date">{{ koncert.datum }}</div>
+                        <div class="tour-venue">{{ koncert.misto }}</div>
+                        
+                        <div class="tour-location">{{ koncert.mesto }}</div>
+                    </li>
+                {%else%}
+                    <li>{{_('Zrovna není naplánovaný žádný koncert')}}
+                        {{_('Pozvěte si nás. :)')}}
+                        strangegoatcz@gmail.com
+                    </li>
+
+                {%endif%}
             {% endfor %}
         </ul>
     </section>

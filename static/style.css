@@ -376,14 +376,15 @@ body.stranka-koncerty {
     justify-content: center; 
     align-items: center;
     flex-direction: column;  
-    padding: 4rem; /* 40px */
+    padding-top: 4rem; /* 40px */
+    padding-bottom: 1rem;
     background-color: rgba(0, 0, 0, 0.5); 
 }
 
 .socialni-ikony a {
     color: white;
     font-size: 3rem; /* 30px */
-    margin: 0 1.5rem;  /* 15px */
+    margin: 0 0rem;  /* 15px */
     transition: color 0.3s;
     text-decoration: none;
 }
@@ -424,6 +425,7 @@ body.stranka-koncerty {
     .album-dlazdice:hover { transform: translateY(-0.5rem); } /* -5px */
     .nano-koncerty:hover { background-color: #87023a; bottom: 1rem; transform: translateY(-0.5rem); }
     #bandcamp-okno:hover .tajny-text { opacity: 1; text-decoration: dashed; }
+    #back-tlacitko img:hover { filter :invert(0.25); }
 }
 
 .tour-item:active { background-color: rgba(255, 255, 255, 0.05); }
@@ -432,6 +434,8 @@ body.stranka-koncerty {
 .album-dlazdice:active { transform: translateY(-0.5rem); }
 .nano-koncerty:active { background-color: #87023a; bottom: 1rem; transform: translateY(-0.5rem); }
 #bandcamp-okno:active .tajny-text { opacity: 1; text-decoration: dashed; }
+#back-tlacitko img:active { filter :invert(0.25); }
+
 
 /* --- MEDIA QUERY PRO MOBILY --- */
 /* Zde ponechávám 768px, u breakpointů je to standardní praxe */
@@ -527,6 +531,7 @@ body.stranka-koncerty {
     #spodni-obsah {
         min-height: 120dvh;
     }
+    
     #back-tlacitko.schovano{
         opacity: 0;
     }

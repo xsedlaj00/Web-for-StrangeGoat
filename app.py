@@ -44,8 +44,16 @@ def home():
 @app.route('/koncerty')
 def koncerty():
     with open('koncerty.json', 'r', encoding='utf-8') as f:
-        seznam_koncertu = json.load(f)
-    return render_template('koncerty.html', koncerty_do_html=seznam_koncertu)
+        seznamkoncertu = json.load(f)
+
+    dnes = datetime.datetime.now().date()
+    aktualni_koncerty = []
+    for koncert in seznamkoncertu:
+        datum_koncertu=datetime.datetime.strptime(koncert['datum'],"%d.%m.%Y").date()
+        if datum_koncertu>=dnes :
+            aktualni_koncerty.append(koncert)
+
+    return render_template('koncerty.html', koncerty_do_html=aktualni_koncerty)
 
 # Cesta 3: Hudba (hudba.html)
 @app.route('/hudba')
