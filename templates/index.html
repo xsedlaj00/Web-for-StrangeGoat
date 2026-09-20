@@ -74,7 +74,7 @@
             var odskrolovano = window.scrollY;
             var skale = 1 - (odskrolovano / 500);
             
-            if (jeMobil) {
+            if (!jeMobil) {
                 cilovaScale = Math.max(0.2, skale);
             } else {
                 cilovaScale = Math.max(0.5, skale);

@@ -16,13 +16,12 @@
                         
                         <div class="tour-location">{{ koncert.mesto }}</div>
                     </li>
-                {%else%}
-                    <li>{{_('Zrovna není naplánovaný žádný koncert')}}
-                        {{_('Pozvěte si nás. :)')}}
-                        strangegoatcz@gmail.com
-                    </li>
-
                 {%endif%}
+            {% else %}
+                <li>{{_('Zrovna není naplánovaný žádný koncert')}}
+                    {{_('Pozvěte si nás. :)')}}
+                    strangegoatcz@gmail.com
+                </li>
             {% endfor %}
         </ul>
     </section>
