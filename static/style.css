@@ -381,12 +381,25 @@ body.stranka-koncerty {
     background-color: rgba(0, 0, 0, 0.5); 
 }
 
+.socialni-ikony {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem; /* 15px */
+    margin: 2rem 0; /* 20px */
+}
+
 .socialni-ikony a {
     color: white;
     font-size: 3rem; /* 30px */
-    margin: 0 0rem;  /* 15px */
-    transition: color 0.3s;
+    transition: color 0.3s, transform 0.2s;
     text-decoration: none;
+}
+
+.socialni-ikony a:hover {
+    color: rgba(220, 4, 213, 0.8);
+    transform: scale(1.2);
 }
 
 .album-detail-mrizka {
