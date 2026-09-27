@@ -399,7 +399,7 @@ body.stranka-koncerty {
 
 .socialni-ikony a:hover {
     color: rgba(220, 4, 213, 0.8);
-    transform: scale(1.2);
+    transform: scale(1.02);
 }
 
 .album-detail-mrizka {
@@ -548,4 +548,5 @@ body.stranka-koncerty {
     #back-tlacitko.schovano{
         opacity: 0;
     }
+
 }

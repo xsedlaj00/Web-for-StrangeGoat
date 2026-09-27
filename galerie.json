@@ -24,5 +24,23 @@
             "P5070523.webp",
             "P5070541.webp"
         ]
+    },
+    {
+        "id": "Kampa",
+        "datum": "26.září 2026",
+        "nazev": "Kampa",
+        "uvodni_fotka": "IMG_1397.jpeg.webp",
+        "vsechny_fotky": 
+        [
+            "IMG_1395.jpeg",
+            "IMG_1397.jpeg",
+            "IMG_1398.jpeg"
+        ],
+        "fotky_LQ":
+        [
+            "IMG_1395.jpeg.webp",
+            "IMG_1397.jpeg.webp",
+            "IMG_1398.jpeg.webp"            
+        ]       
     }
 ]
