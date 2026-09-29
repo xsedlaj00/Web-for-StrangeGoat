@@ -69,7 +69,14 @@
         }
         /* get back fce*/
         function getBack() {
-            window.location.href = "/";
+
+            cesta=window.location.pathname;
+            if(cesta.startsWith("/galerie/"))
+            {
+                window.location.href="/galerie";
+            }
+            else
+                window.location.href = "/";
 
         }
         
