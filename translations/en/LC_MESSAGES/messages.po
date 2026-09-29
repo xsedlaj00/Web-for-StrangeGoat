@@ -38,17 +38,13 @@ msgstr "Gallery"
 msgid "Novinky"
 msgstr "News"
 
-#: templates/galerie.html:3
-msgid "Zde fotky"
-msgstr "Photos in here"
-
 #: templates/index.html:9
 msgid "Přijďte si nás poslechnout!"
 msgstr "Come listen to us"
 
 #: templates/index.html:16
-msgid "Zrovna není naplánovaný žádný koncert"
-msgstr "We do not have any concerts planned currently"
+msgid "Zrovna není naplánovaný žádný koncert."
+msgstr "We do not have any concerts planned currently."
 
 #: templates/index.html:17
 msgid "Pozvěte si nás. :)"
